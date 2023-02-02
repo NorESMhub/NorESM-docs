@@ -1,0 +1,14 @@
+# generated local files
+*.log
+
+# editor files
+*~
+*.bak
+.*.sw*
+
+# generated python files
+*.pyc
+
+# ignore for the merge to master and orphaning of the gh-pages branch
+build/
+_build/
