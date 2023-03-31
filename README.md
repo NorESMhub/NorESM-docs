@@ -1,11 +1,11 @@
 # Norwegian Earth System Model Documentation
 
 [![License: GNU LGPL 3.0](https://img.shields.io/badge/license-LGPL--3.0-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
-
 [![NordicESMhub chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://nordicesmhub.zulipchat.com/)
 
-[![NorESM1 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm1)](https://noresm-docs.readthedocs.io/en/noresm1/?badge=noresm1)
-[![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
+Noresm1 [![NorESM1 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm1)](https://noresm-docs.readthedocs.io/en/noresm1/?badge=noresm1)
+
+NorESM2 [![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
 
 The documentation is for now what was available as part of the MetNo wiki and needs to be re-organized (see project).
 
