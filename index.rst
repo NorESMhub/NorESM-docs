@@ -3,13 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the NorESM2 User's Guide!
-================================================
+Welcome to the NorESM documentation pages!
+==========================================
 
-The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2 users and developers to share information. E.g. How is the code organised? What tools are used? Which version should be run for what purpose?
+NorESM has been developed since 2007, and has served as a common platform for contributions from the Norwegian research community to the WCRP Coupled Model Intercomparison Project (CMIP) and reports from the Intergovernmental Panel on Climate Change (IPCC).
+These documentation pages provide information about NorESM at key stages of development, as well as recent updates to the model system.
+For this reason, separate documentation pages are provided for the different model versions.
 
-| The NorESM1 version ReadTheDocs can be found here
-| https://noresm-docs.readthedocs.io/en/noresm1/
+
+Documentation of NorESM model versions
+--------------------------------------
+
+`NorESM1 <https://noresm-docs.readthedocs.io/en/noresm1/>`_ :
+   Model version used for CMIP5 and IPCC AR5
+
+`NorESM2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ :
+   Model version used for CMIP6 and IPCC AR6
 
 
 Low-key discussion forum
@@ -17,28 +26,37 @@ Low-key discussion forum
 If you have a question or you can’t find the solution to a problem in the documentation, please post your question here: https://github.com/NorESMhub/NorESM/discussions
 
 
-How to contribute
-------------------
+How to get information about NorESM events
+------------------------------------------
+For obtaining news per email register to users@noresm.org at https://www.noresm.org or via `this link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
+
+
+How to contribute to the NorESM model
+-------------------------------------
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for
 code improvements, and suggestions for feature enhancements or inclusion of new features. Please
 consult the `CONTRIBUTING.md <https://github.com/NorESMhub/NorESM/blob/master/CONTRIBUTING.md>`_
 file in the github repository or the ":ref:`contribute`" section in this document, and create a
 `new issue <https://github.com/NorESMhub/NorESM/issues>`_ on github.
 
+
+How to contribute to this documentation
+---------------------------------------
+The source code for the NorESM documentation is available from a dedicated `NorESM-docs <https://github.com/NorESMhub/NorESM-docs/>`_ repository on gitHub.
 Further information on how to contribute to this documentation can be found at
-https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
-
-For obtaining news per email register to users@noresm.org at https://www.noresm.org or via this `link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Content:
-
-   contribute/contribute.rst
+https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
 
 
-Search
-==================
+..
+   .. toctree::
+      :maxdepth: 2
+      :caption: Content:
 
-* :ref:`search`
+      contribute/contribute.rst
+
+
+   Search
+   ==================
+
+   * :ref:`search`
 
