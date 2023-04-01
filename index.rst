@@ -26,7 +26,7 @@ file in the github repository or the ":ref:`contribute`" section in this documen
 `new issue <https://github.com/NorESMhub/NorESM/issues>`_ on github.
 
 Further information on how to contribute to this documentation can be found at 
-https://github.com/NorESMhub/NorESM/blob/master/doc/README.md.
+https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
 
 For obtaining news per email register to users@noresm.org at https://www.noresm.org or via this `link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
 
