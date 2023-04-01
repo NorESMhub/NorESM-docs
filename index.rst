@@ -36,7 +36,7 @@ How to contribute to the NorESM model
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for
 code improvements, and suggestions for feature enhancements or inclusion of new features. Please
 consult the `CONTRIBUTING.md <https://github.com/NorESMhub/NorESM/blob/master/CONTRIBUTING.md>`_
-file in the github repository or the ":ref:`contribute`" section in this document, and create a
+file in the github repository, and create a
 `new issue <https://github.com/NorESMhub/NorESM/issues>`_ on github.
 
 
@@ -45,18 +45,3 @@ How to contribute to this documentation
 The source code for the NorESM documentation is available from a dedicated `NorESM-docs <https://github.com/NorESMhub/NorESM-docs/>`_ repository on gitHub.
 Further information on how to contribute to this documentation can be found at
 https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
-
-
-..
-   .. toctree::
-      :maxdepth: 2
-      :caption: Content:
-
-      contribute/contribute.rst
-
-
-   Search
-   ==================
-
-   * :ref:`search`
-
