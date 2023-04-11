@@ -3,9 +3,11 @@
 [![License: GNU LGPL 3.0](https://img.shields.io/badge/license-LGPL--3.0-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
 [![NordicESMhub chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://nordicesmhub.zulipchat.com/)
 
-Noresm1 [![NorESM1 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm1)](https://noresm-docs.readthedocs.io/en/noresm1/?badge=noresm1)
+The NorESM documentation on Read the Docs is built from the branches in this repository. The branches correspond to different versions of the NorESM source code.
 
-NorESM2 [![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
+- Noresm1 : [![NorESM1 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm1)](https://noresm-docs.readthedocs.io/en/noresm1/?badge=noresm1)
+
+- NorESM2 : [![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
 
 ## How to contribute to the NorESM documentation
 
