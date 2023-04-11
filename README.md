@@ -7,8 +7,6 @@ Noresm1 [![NorESM1 Documentation Status](https://readthedocs.org/projects/noresm
 
 NorESM2 [![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)
 
-The documentation is for now what was available as part of the MetNo wiki and needs to be re-organized (see project).
-
 ## How to contribute to the NorESM documentation
 
 - step 1: Fork this repository as shown in the figure below.
