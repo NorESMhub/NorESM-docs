@@ -22,6 +22,8 @@ to ``CAM_CONFIG_OPTS`` in ``env_build.xml`` after creating a case.
    heat_glob = 0._r8
 
 
+.. note:: NorESM2.2 Nudging
+   Nudging capability is also available in NorESM2.2 version (experimental) - for instructions see `here <https://noresm22-nudging-regional.readthedocs.io/en/latest/index.html>`_ . This has a very different implementation of nudging, but makes regional etc. nudging simpler.
 
 
 Meteorology
