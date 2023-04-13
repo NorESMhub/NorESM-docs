@@ -14,11 +14,22 @@ For this reason, separate documentation pages are provided for the different mod
 Documentation of NorESM model versions
 --------------------------------------
 
+NorESM versions, similarly to the upstream CESM project, come in two flavors, scientifically supported and validated versions and experimental development versions.
+For most use cases, the scientifically supported versions are preferable, being both better tested and documented.
+
+
+Scientifically supported NorESM versions
+""""""""""""""""""""""""""""""""""""""""
+
 `NorESM1 <https://noresm-docs.readthedocs.io/en/noresm1/>`_ :
-   Model version used for CMIP5 and IPCC AR5
+   Model version used for CMIP5 and IPCC AR5.
+   NorESM1 is based on the Community Climate System Model (CCSM4.0) and the Community Earth System Model (CESM1.0.3).
+   The latest code release is `noresm 1 <https://github.com/NorESMhub/NorESM/releases/tag/1.0.0>`_, from December 19, 2018.
 
 `NorESM2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ :
-   Model version used for CMIP6 and IPCC AR6
+   Model version used for CMIP6 and IPCC AR6.
+   NorESM2 is based on the Community Earth System Model (`CESM2.1 <https://www.cesm.ucar.edu/models/cesm2>`_).
+   The latest code release is `noresm2.0.6 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6>`_, from December 12, 2022.
 
 
 Low-key discussion forum
