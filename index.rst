@@ -32,6 +32,13 @@ Scientifically supported NorESM versions
    The latest code release is `noresm2.0.6 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6>`_, from December 12, 2022.
 
 
+Unsupported development versions
+""""""""""""""""""""""""""""""""
+
+`NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
+   Experimental development version based on CESM2.2.
+
+
 Low-key discussion forum
 ---------------------------
 If you have a question or you can’t find the solution to a problem in the documentation, please post your question here: https://github.com/NorESMhub/NorESM/discussions
