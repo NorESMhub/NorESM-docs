@@ -1,7 +1,7 @@
 .. _aerosol_output:
 
 Aerosol diagnostics and output
-===============================
+==============================
 
 
 Configuring a run with more aerosol diagnostics in NorESM2
@@ -18,7 +18,7 @@ Adding ``history_aerosol = .true.`` to ``user_nl_cam gives`` additional 577 vari
 Please see an overview of additional output varibales: :ref:`aerosol_output_history_aerosol_variables`
 
 Decomposition of aerosol direct, semidirect and indirect radiative forcing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For effective radiative forcing estimates, multiple calls to the radiation code are necessary (see Ghan et al. 2012 for a detailed explanation). To enable this, copy the file ``preprocessorDefinitions.h`` from to the ``SourceMods/src.cam/`` folder in your case directory::
 
@@ -42,7 +42,7 @@ to ``preprocessorDefinitions.h`` gives 8 additionally variables (+ ca. 5% CPU-ti
 
 
 Enable diagnostics for AEROCOM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 NorESM2 can be set up to take out additional aerosol output for use in AeroCom (https://aerocom.met.no/index.html) or other studies where there is a need for extensive aerosol diagnostics. To enable this, copy the file ``preprocessorDefinitions.h`` from to the ``SourceMods/src.cam/`` folder in your case directory::
 
   cp <noresm_base>/components/cam/src/physics/cam_oslo/preprocessorDefinitions.h <case_folder>/SourceMods/src.cam/.

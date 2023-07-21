@@ -1,11 +1,12 @@
 :orphan:
+
 .. _simplified_models:
 
 Simplified setup
-'''''''''''''''''''''''
+''''''''''''''''
 
-Slab ocean 
-^^^^^^^^^^^^
+Slab ocean
+^^^^^^^^^^
 
 The slab ocean configuration is under development.
 

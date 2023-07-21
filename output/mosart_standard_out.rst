@@ -1,8 +1,9 @@
 :orphan:
+
 .. _mosart_standard_out:
 
 MOSART standard set-up output
-''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''
 | mcdate = "current date (YYYYMMDD)"
 | mcsec = "current seconds of current date"
 | mdcur = "current day (from base day)"
@@ -30,4 +31,3 @@ MOSART standard set-up output
 
 | TOTAL_DISCHARGE_TO_OCEAN_ICE = "MOSART total discharge into ocean: ICE"
 | TOTAL_DISCHARGE_TO_OCEAN_LIQ = "MOSART total discharge into ocean: LIQ"
-

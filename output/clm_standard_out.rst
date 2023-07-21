@@ -1,8 +1,9 @@
 :orphan:
+
 .. _clm_standard_out:
 
 CLM5 standard set-up output
-''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''
 
 | mcdate = "current date (YYYYMMDD)"
 | mcsec = "current seconds of current date"
@@ -560,4 +561,3 @@ CLM5 standard set-up output
 | ZWT = "water table depth (vegetated landunits only)"
 | ZWT_CH4_UNSAT = "depth of water table for methane production used in non-inundated area"
 | ZWT_PERCH = "perched water table depth (vegetated landunits only)"
-
