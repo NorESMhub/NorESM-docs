@@ -6,23 +6,26 @@ Overview of CIME-CCS system testing
 
 System tests are useful for:
 
-* Verifying various requirements
+* Verifying various requirements for a given model resolution/configuration combination:
 
-  * Runs to completion
+  * Model runs to completion successfully
 
-  * Restarts bit-for-bit
+  * Model results does not change from baselines    
 
-  * Results independent of processor count
+  * Model restarts without affecting the results (bit-for-bit)
 
-  * Threading
+  * Model results are independent of processor count
+
+  * Code is thread safe
 
   * Compilation with debug flags, e.g., to pick up:
 
     * Array bounds problems
 
-    * Floating point errors
+    * Floating point errors (note that without debug flags, floating
+      point exceptions are normally not triggered)
 
-  * And other specialty tests (e.g., init_interp)
+  * And other specialty tests (e.g., init_interp for CTSM)
 
 * Verifying those requirements across a wide range of model
   configurations (e.g., making sure NorESM tests still works when new
@@ -80,19 +83,23 @@ An example is::
 Meaning of the elements of a test name
 ======================================
 
-``Testtype``: code specifying the type of test to run; common test types
-are given in the table below. The ``SMS`` test in the above example is a
+``Testtype``: code specifying the type of test to run; common test
+types are given below.  The ``SMS`` test in the above example is a
+obasic "smoke" test that ensures that the particular
+configuration/resolution combinations can successfully run and
+optionally check for any undesired answer changes.
+
 basic smoke test that ensures that the particular configuration/resolution
 combination can successfully run.
 
 ``Testopt``: One or more options modifying some high-level configuration
 options. In the above example, we are compiling in debug mode (``_D``),
-and running for 3 days (``_Ld3``).
+and running for 3 simulated days (``_Ld3``). Another common option is the specification of the number of processing elements that the test should use (``_P128``).
 
 ``Resolution``: Any resolution that you would typically specify via the
 ``--res`` argument to ``create_newcase``. In the above example, we are
 using the ``f19_f19_mtn14`` resolution, which is a 2 degree global grid
-global grid for atm/lnd/ice/ocn and that has an ocean mask corresponding to
+for atm/lnd/ice/ocn and that has an ocean mask corresponding to
 tnx1v4 that has been mapped to the f19 grid. This grid combination is normally
 used for testing CAM in 'stand-alone mode' where the ocean is a data ocean and
 ice is run in prescribed mode and all components are on the finite volume 1.9 degree grid.
@@ -209,10 +216,9 @@ compiler. Typically, this turns on checks for array bounds and various
 floating point traps. The model will run significantly slower with this
 option.
 
-``_L``:
-Specifies the length of the run. The default for most tests is 5
-days. Examples are ``_Ld3`` (3 days), ``_Lm6`` (6 months), and
-``_Ly5`` (5 years).
+``_L``: Specifies the length of the run. The default for most tests is
+5 days. Examples are ``_Ln9`` (9 time steps), ``_Ld3`` (3 days),
+``_Lm6`` (6 months), and ``_Ly5`` (5 years).
 
 ``_P``:
 Specifies the processor count of the run. Syntax is ``_PNxM`` where
@@ -233,20 +239,21 @@ to xml and namelist variables for a particular test. They typically
 serve two purposes:
 
 #. Adding more frequent component history output, additional component history streams,
-   and/or additional componetn history variables. The more frequent history output
+   and/or additional component history variables. The more frequent history output
    is particularly important, since otherwise a short (e.g., 5-day) test
    would not produce any component (e.g. CAM) diagnostic output (since the default
    output frequency is monthly).
 
 #. Making configuration changes specific to this test, such as turning
-   on a non-default parameterization option.
+   on a non-default parameterization option or changing the coupling
+   frequency to enable short runs.
 
 Testmods directories are assumed to be in the component 
 ``cime_config/testdefs/testmods_dirs``. Dashes are used in place of
 slashes in the path relative to that directory. As an example, for CAM a testmod of
 ``outfrq9s`` is found in
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/cam/outfrq9s/``.
-As another exmaple, for CLM a testing of ``default`` is found in 
+As another exmaple, for CTSM a testmod of ``default`` is found in 
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/clm/default/``.
 
 Testmods directories can contain three types of files:
@@ -501,7 +508,8 @@ You can check the individual ``TestStatus`` files in each test of your
 test suite. However, an easier way to check the results of a test
 suite is to run the ``cs.status.TESTID`` command that is put in your
 test root (where ``TESTID`` is the unique id that was used for this
-test suite).
+test suite or the test ID specified using the ``--test-id`` option to
+``./create_test``).
 
 As an example, if you run this ``cs.status.20170926_093725_gq431o`` command, you will see output like the following::
 
@@ -600,7 +608,7 @@ attributes:
   ``--xml-category aux_clm``; see `Test categories`_ for other options)
 
 * The machine, specified with ``--xml-machine`` (e.g., ``--xml-machine
-  betzy``)
+  betzy``). 
 
 * The compiler, specified with ``--xml-compiler`` (e.g.,
   ``--xml-compiler intel``) (although it's also possible to leave this
@@ -652,13 +660,13 @@ Overview of baseline comparisons
 
 Testing that various configurations run to completion and that given
 variations are bit-for-bit with each other can only take you so
-far. The strongest tool we have for determining that your changes
-haven't resulted in unexpected changes are baseline comparisons. These
+far. Baseline comparisons enable you to determine if your code changes
+have resulted in unexpected numerical differences. Baseline comparisons
 compare the output from the current version of the code against the
 output from a previous version to determine if answers have changed at
 all in the new version.
 
-Depending on what you have changed, you may expect:
+Depending on the changes you have made, you may expect:
 
 1. No answer changes, e.g., if you are doing an answer-preserving code
    refactoring, or adding a new option but not changing anything with
@@ -673,8 +681,8 @@ Depending on what you have changed, you may expect:
 
 4. Answers change for most or all configurations
 
-You may think that most changes fall into (4). With some care, however,
-it is often possible to separate large changes to the model science into:
+We recommend that when you have large changes to the model science you
+should separate them into the following:
 
 * Bit-for-bit modifications that can be tested against baselines - e.g.,
   renaming variables and moving code around, either before or after your
@@ -694,14 +702,14 @@ Baseline comparisons step 1: Determine if you need to generate baselines
 ========================================================================
 
 First, you need to determine what to use as a baseline. Generally this
-is the version of master from which you have branched, or a previous,
-well-tested version of your branch.
+is the version of the ``noresm`` branch from which you have branched,
+or a previous, well-tested version of your branch.
 
-If you're comparing against a version of master and have access to the
-main development machine(s) for the given component, then baselines may
-already exist. (e.g., on betzy, baselines go in
-``/cluster/shared/noresm/noresm_baselines`` by default). Otherwise, you'll need to
-generate your own baselines.
+If you're comparing against a version of the ``noresm`` branch and
+have access to the main development machine(s) for the given
+component, then baselines may already exist. (e.g., on betzy,
+baselines go in ``/cluster/shared/noresm/noresm_baselines`` by
+default). Otherwise, you'll need to generate your own baselines.
 
 Baseline comparisons step 2: Generate baselines, if needed
 ==========================================================
@@ -780,6 +788,12 @@ are also performed for:
 * Model throughput (``TPUTCOMP``). However, note that system variability
   can cause this to fail even when there isn't a real problem.
 
+* Model memory usage (``MEMCOMP``). However, note that system variability
+  can cause this to fail even when there isn't a real problem.
+
+* Model memory leak (``MEMLEAK``). 
+
+
 Generating or comparing baselines after the fact
 ================================================
 
@@ -803,9 +817,7 @@ There are two complementary tools for doing this:
 * ``cime/CIME/Tools/compare_test_results``: after-the-fact baseline
   comparison
 
-The usage messages for these are a bit confusing, due to the different
-workflows used in ACME vs. CESM. A typical usage of
-``compare_test_results`` for CESM would look like this::
+A typical usage of ``compare_test_results`` for NorESM would look like this::
 
   ./compare_test_results -b BASELINE_NAME --baseline-root BASELINE_ROOT -r TEST_ROOT -t TEST_ID
 
