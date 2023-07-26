@@ -31,4 +31,3 @@ of the code.
    vc_github.rst
    fork_workflow.rst
    gitbestpractice.rst
-

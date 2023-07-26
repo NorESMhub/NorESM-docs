@@ -1,11 +1,12 @@
 :orphan:
+
 .. _hamocc_standard_out:
 
 iHAMOCC standard set-up output
-''''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''
 
 Monthly averaged output
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 | atmco2 = "Atmospheric CO2"
 
@@ -27,14 +28,14 @@ Monthly averaged output
 | calflx2000 = "CaCO3 flux at 2000m"
 | calflx4000 = "CaCO3 flux at 4000m"
 | calflx_bot = "CaCO3 flux to sediment"
-| 
+|
 | carflx0100 = "C flux at 100m"
 | carflx0500 = "C flux at 500m"
 | carflx1000 = "C flux at 1000m"
 | carflx2000 = "C flux at 2000m"
 | carflx4000 = "C flux at 4000m"
 | carflx_bot = "C flux to sediment"
-| 
+|
 | co2fxd = "Downward CO2 flux"
 | co2fxu = "Upward CO2 flux"
 | co3lvl = "Carbonate ions"
@@ -43,17 +44,17 @@ Monthly averaged output
 
 | depth_bnds
 | detoclvl = "Detritus"
-| 
+|
 | dfelvl = "Dissolved iron"
 | dissiclvl = "Dissolved inorganic carbon"
 | dissoclvl = "Dissolved organic carbon"
-| 
+|
 | dms = "DMS"
 | dms_bac = "DMS bacterial consumption"
 | dms_uv = "DMS photolysis reduction"
 | dmsflux = "DMS flux"
 | dmsprod = "DMS production from phytoplankton production"
-| 
+|
 | dnitint = "Integrated denitrification"
 
 ----------------------------------------------------------

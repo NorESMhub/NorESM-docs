@@ -1,11 +1,12 @@
 :orphan:
+
 .. _blom_standard_out:
 
-BLOM standard set-up output  
-''''''''''''''''''''''''''''''
+BLOM standard set-up output
+'''''''''''''''''''''''''''
 
-Monthly averaged output  
-^^^^^^^^^^^^^^^^^^^^^^^^
+Monthly averaged output
+^^^^^^^^^^^^^^^^^^^^^^^
 
 | abswnd = "Absolute wind speed"    
 

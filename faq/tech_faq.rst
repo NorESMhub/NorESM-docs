@@ -5,13 +5,13 @@ Technical FAQ
 
 
 How do I check the timing and cost of my experiments?
--------------------------------------------------
+-----------------------------------------------------
 
 You will find a detailed overview of the model cost, throughput and run time for each model component in a subfolder named ``timing`` in the case folder (e.g. in ``~/NorESM/cases/<casename>/timing/``)
 The filename is on the form ``cesm_timing.<casename>.JOBID.yymmdd-hhmmss``
 
 My model experiment/simulation crashes and I don't know why!
--------------------------------------------------------------
+------------------------------------------------------------
 If you experience crashes while setting up, building, submitting or archiving the experiment, you may find useful information in the log file in the casefolder (e.g. in ``~/NorESM/cases/<casename>/``). The filename is the same as the 15 first letters of the casename with no file extension. If you don't find a solution to your problem please post your question here: https://github.com/NorESMhub/NorESM/discussions
 
 

@@ -1,8 +1,9 @@
 :orphan:
+
 .. _cice_standard_out:
 
 CICE stadard set-up output
-'''''''''''''''''''''''''''''
+''''''''''''''''''''''''''
 
 | aice = "ice area  (aggregate)"
 | aicen = "ice area, categories"
@@ -132,4 +133,3 @@ CICE stadard set-up output
 | vicen = "ice volume, categories"
 | vsnon = "snow depth on ice, categories"
 | vvel = "ice velocity (y)"
-
