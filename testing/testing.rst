@@ -1,5 +1,9 @@
 .. _testing:
 
+..
+   _Thanks to the CTSM software engineering team for providing a starting point as well
+   as material for this document:
+
 ===================================
 Overview of CIME-CCS system testing
 ===================================
@@ -10,7 +14,7 @@ System tests are useful for:
 
   * Model runs to completion successfully
 
-  * Model results does not change from baselines    
+  * Model results does not change from baselines
 
   * Model restarts without affecting the results (bit-for-bit)
 
@@ -92,21 +96,24 @@ optionally check for any undesired answer changes.
 basic smoke test that ensures that the particular configuration/resolution
 combination can successfully run.
 
-``Testopt``: One or more options modifying some high-level configuration
-options. In the above example, we are compiling in debug mode (``_D``),
-and running for 3 simulated days (``_Ld3``). Another common option is the specification of the number of processing elements that the test should use (``_P128``).
+``Testopt``: One or more options modifying some high-level
+configuration options. In the above example, we are compiling in debug
+mode (``_D``), and running for 3 simulated days (``_Ld3``). Another
+common option is the specification of the number of processing
+elements that the test should use (``_P128``).
 
-``Resolution``: Any resolution that you would typically specify via the
-``--res`` argument to ``create_newcase``. In the above example, we are
-using the ``f19_f19_mtn14`` resolution, which is a 2 degree global grid
-for atm/lnd/ice/ocn and that has an ocean mask corresponding to
-tnx1v4 that has been mapped to the f19 grid. This grid combination is normally
-used for testing CAM in 'stand-alone mode' where the ocean is a data ocean and
-ice is run in prescribed mode and all components are on the finite volume 1.9 degree grid.
+``Resolution``: Any resolution that you would typically specify via
+the ``--res`` argument to ``create_newcase``. In the above example, we
+are using the ``f19_f19_mtn14`` resolution, which is a 2 degree global
+grid for atm/lnd/ice/ocn and that has an ocean mask corresponding to
+tnx1v4 that has been mapped to the f19 grid. This grid combination is
+normally used for testing CAM in 'stand-alone mode' where the ocean is
+a data ocean and ice is run in prescribed mode and all components are
+on the finite volume 1.9 degree grid.
 
 ``Compset``: Any compset that you would typically specify via the
-``--compset`` option to ``create_newcase``. In the above example, we are
-using the ``F2000climo`` compset.
+``--compset`` option to ``create_newcase``. In the above example, we
+are using the ``F2000climo`` compset.
 
 ``Machine``: The name of the machine you are running on (``betzy`` in
 the above example).
@@ -248,12 +255,12 @@ serve two purposes:
    on a non-default parameterization option or changing the coupling
    frequency to enable short runs.
 
-Testmods directories are assumed to be in the component 
+Testmods directories are assumed to be in the component
 ``cime_config/testdefs/testmods_dirs``. Dashes are used in place of
 slashes in the path relative to that directory. As an example, for CAM a testmod of
 ``outfrq9s`` is found in
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/cam/outfrq9s/``.
-As another exmaple, for CTSM a testmod of ``default`` is found in 
+As another exmaple, for CTSM a testmod of ``default`` is found in
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/clm/default/``.
 
 Testmods directories can contain three types of files:
@@ -343,9 +350,14 @@ running ``create_test -h``. Here are some of the most useful options:
 Parsing test output
 ===================
 
-As a test runs through its various phases (setup, build, run, etc.), it
-updates a file named ``TestStatus`` in the test's case directory. After
-a test completes, a typical ``TestStatus`` file will look like this::
+As a test runs through its various phases (setup, build, run, etc.),
+it updates a file named ``TestStatus`` in the test's case
+directory. In the example below, we are comparing the current test
+results to another test that was run and resides in the compare
+directory ``baseline_dir``. You would expect the subdirectory
+``ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default``
+to be in ``baseline_dir``. After a test completes, a typical
+``TestStatus`` file will look like this::
 
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default CREATE_NEWCASE
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default XML
@@ -356,7 +368,7 @@ a test completes, a typical ``TestStatus`` file will look like this::
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default SUBMIT
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default RUN time=606
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default COMPARE_base_rest
-  PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE ctsm_n11_clm4_5_16_r249
+  PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE baseline_dir
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default TPUTCOMP
   PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default MEMLEAK insuffiencient data for memleak test
 
@@ -373,16 +385,16 @@ The three possible status codes you may see are:
   a given phase is listed as ``PEND``, subsequent phases may not be
   listed yet in the ``TestStatus`` file.)
 
-By the time a test completes, you should typically see all ``PASS``
-status values to indicate that the test completed successfully. However,
-we often ignore ``FAIL`` values for ``TPUTCOMP`` and ``MEMCOMP`` (which
-compare throughput and memory usage with the baseline), because system
-variability can cause these to fail even when there isn't a real
-problem.
+If a test completes, you should normally see all ``PASS`` status
+values to indicate that the test completed successfully. However,
+``FAIL`` values for ``TPUTCOMP`` and ``MEMCOMP`` should be taken with
+a grain of salt.  These compare throughput and memory usage with the
+baseline and system variability can often cause these to fail even
+though there is no fundamental problem.
 
 More detailed test output can be found in the file named
-``TestStatus.log`` in the test's case directory. This is the first place
-you should look if a test has failed.
+``TestStatus.log`` in the test's case directory. If a test fails, this
+is the first place file you should look at.
 
 Finding more details on failed comparisons
 ==========================================
@@ -408,14 +420,14 @@ If any one of these comparisons fails, you will see a line like::
 As usual, more details can be found in ``TestStatus.log``, where you
 will find output like this::
 
-  2017-09-26 10:10:24: Comparing hists for case 'ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud' dir1='/cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run', suffix1='base',  dir2='/cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run' suffix2='rest'
+  2022-09-26 10:10:24: Comparing hists for case 'ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud' dir1='/cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run', suffix1='base',  dir2='/cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run' suffix2='rest'
     comparing model 'datm'
       no hist files found for model datm
     comparing model 'clm'
-      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.rest
-      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
-      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.rest
-      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.base.cprnc.out
+      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.rest
+      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
+      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.rest
+      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h1.0001-01-04-00000.nc.base.cprnc.out
     comparing model 'sice'
       no hist files found for model sice
     comparing model 'socn'
@@ -427,8 +439,8 @@ will find output like this::
     comparing model 'swav'
       no hist files found for model swav
     comparing model 'cpl'
-      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.rest
-      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.base.cprnc.out
+      /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.base did NOT match /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.rest
+      cat /cluster/work/users/mvertens/noresm/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud/run/ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.cpl.hi.0001-01-04-00000.nc.base.cprnc.out
   FAIL
 
 Notice the lines that say ``did NOT match``. Also notice the lines
@@ -439,7 +451,7 @@ information. Most of what you need, though, can be determined via:
 
 #. Examining the last 10 or so lines::
 
-     $ tail -10 ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
+     $ tail -10 ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
 
      SUMMARY of cprnc:
       A total number of    487 fields were compared
@@ -452,7 +464,7 @@ information. Most of what you need, though, can be determined via:
 
 #. Looking for lines referencing RMS errors::
 
-     $ grep RMS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20170926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
+     $ grep RMS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default.20220926_095505_cqrqud.clm2.h0.0001-01-04-00000.nc.base.cprnc.out
       RMS ACTUAL_IMMOB                     3.4138E-11            NORMALIZED  1.1947E-04
       RMS AGNPP                            3.9135E-14            NORMALIZED  1.0836E-08
       RMS AR                               1.4793E-10            NORMALIZED  1.2585E-05
@@ -471,21 +483,19 @@ normalized RMS differences.
 Running multiple tests at once
 ==============================
 
-It is often useful to run multiple tests at once (i.e., a `test suite`),
+It is often useful to run multiple tests at once
 covering different test types, different compsets, different compilers,
-etc.
+etc. This is referred to as a `test suite`.
 
-This can be done by simply listing each test on the ``create_test``
+One way this can be done is by listing each test on the ``create_test``
 command-line, as in::
 
   ./create_test SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default
 
-However, it is often more convenient to create a file listing each of
-the tests you want to run. This way you can easily run the same test
-suite again later.
-
-To do this, simply create a text file containing your test list, with
-one test per line::
+However, a simpler approach is to create a file listing each of the
+tests you want to run. You can then reuse this file to run the test
+suite again later. To do this, create a text file containing your test
+list, with one test per line::
 
   SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default
   ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default
@@ -511,9 +521,9 @@ test root (where ``TESTID`` is the unique id that was used for this
 test suite or the test ID specified using the ``--test-id`` option to
 ``./create_test``).
 
-As an example, if you run this ``cs.status.20170926_093725_gq431o`` command, you will see output like the following::
+As an example, if you run this ``cs.status.20220926_093725_gq431o`` command, you will see output like the following::
 
-  20170926_093725_gq431o
+  20220926_093725_gq431o
     ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default (Overall: PASS) details:
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default CREATE_NEWCASE
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default XML
@@ -524,7 +534,7 @@ As an example, if you run this ``cs.status.20170926_093725_gq431o`` command, you
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default SUBMIT
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default RUN time=606
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default COMPARE_base_rest
-      PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE ctsm_n11_clm4_5_16_r249
+      PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE baseline_dir
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default TPUTCOMP
       PASS ERS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default MEMLEAK insuffiencient data for memleak test
     SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default (Overall: PASS) details:
@@ -536,7 +546,7 @@ As an example, if you run this ``cs.status.20170926_093725_gq431o`` command, you
       PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default MODEL_BUILD time=202
       PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default SUBMIT
       PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default RUN time=374
-      PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE ctsm_n11_clm4_5_16_r249
+      PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default BASELINE baseline_dir
       PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default TPUTCOMP
       PASS SMS_D_Ld3.f19_f19_mtn14.I1850Clm50BgcCrop.betzy_intel.clm-default MEMLEAK insuffiencient data for memleak test
 
@@ -559,11 +569,11 @@ output manually can be tedious, so some options can help you filter the results:
 
 So a typical use of ``cs.status.TESTID`` will look like this::
 
-  ./cs.status.20170926_093725_gq431o -f --count-performance-fails
+  ./cs.status.20220926_093725_gq431o -f --count-performance-fails
 
 or, if you expect NLCOMP and BASELINE failures::
 
-  ./cs.status.20170926_093725_gq431o -f --count-performance-fails -c NLCOMP -c BASELINE
+  ./cs.status.20220926_093725_gq431o -f --count-performance-fails -c NLCOMP -c BASELINE
 
 Running a pre-defined test suite
 ================================
@@ -572,72 +582,69 @@ In addition to running your own individual tests or test suites, you can
 also use ``create_test`` to run a pre-defined test suite. Moving forwards, NorESM
 components will have a policy that a particular test suite must be run before
 changes can be merged back to the main branch. These test suites are
-defined in the following directories:
-``
-prognostic components:
-$SRCROOT/blom/cime_config/testdefs/testlist_blom.xml
-$SRCROOT/cam/cime_config/testdefs/testlist_cam.xml
-$SRCROOT/cice/cime_config/testdefs/testlist_cice.xml
-$SRCROOT/cism/cime_config/testdefs/testlist_cism.xml
-$SRCROOT/clm/cime_config/testdefs/testlist_clm.xml
-$SRCROOT/rtm/cime_config/testdefs/testlist_rtm.xml
-$SRCROOT/mosart/cime_config/testdefs/testlist_mosart.xml
-$SRCROOT/ww3dev/cime_config/testdefs/testlist_ww3dev.xml
+defined in the following directories::
 
-data components:
-$SRCROOT/cdeps/dice/cime_config/testdefs/testlist_dice.xml
-$SRCROOT/cdeps/cime_config/testdefs/testlist_cdeps.xml
-$SRCROOT/cdeps/docn/cime_config/testdefs/testlist_docn.xml
-$SRCROOT/cdeps/drof/cime_config/testdefs/testlist_drof.xml
-$SRCROOT/cdeps/datm/cime_config/testdefs/testlist_datm.xml
-$SRCROOT/cdeps/dlnd/cime_config/testdefs/testlist_dlnd.xml
-$SRCROOT/cdeps/dwav/cime_config/testdefs/testlist_dwav.xml
 
-mediator:
-$SRCROOT/cmeps/cime_config/testdefs/testlist_drv.xml
-``
+  prognostic components:
+  $SRCROOT/blom/cime_config/testdefs/testlist_blom.xml
+  $SRCROOT/cam/cime_config/testdefs/testlist_cam.xml
+  $SRCROOT/cice/cime_config/testdefs/testlist_cice.xml
+  $SRCROOT/cism/cime_config/testdefs/testlist_cism.xml
+  $SRCROOT/clm/cime_config/testdefs/testlist_clm.xml
+  $SRCROOT/rtm/cime_config/testdefs/testlist_rtm.xml
+  $SRCROOT/mosart/cime_config/testdefs/testlist_mosart.xml
+  $SRCROOT/ww3dev/cime_config/testdefs/testlist_ww3dev.xml
+
+  data components:
+  $SRCROOT/cdeps/dice/cime_config/testdefs/testlist_dice.xml
+  $SRCROOT/cdeps/cime_config/testdefs/testlist_cdeps.xml
+  $SRCROOT/cdeps/docn/cime_config/testdefs/testlist_docn.xml
+  $SRCROOT/cdeps/drof/cime_config/testdefs/testlist_drof.xml
+  $SRCROOT/cdeps/datm/cime_config/testdefs/testlist_datm.xml
+  $SRCROOT/cdeps/dlnd/cime_config/testdefs/testlist_dlnd.xml
+  $SRCROOT/cdeps/dwav/cime_config/testdefs/testlist_dwav.xml
+
+  mediator:
+  $SRCROOT/cmeps/cime_config/testdefs/testlist_drv.xml
 
 To determine what pre-defined test suites are available and what tests
 they contain, you can run ``$SRCROOT/cime/scripts/query_testlists`` (run
-``./query_testlists -h`` for usage information).
+``./query_testlists -h`` for usage information). NorESM test categories will
+have the suffix ``_noresm`` appending to the name.
 
 Test suites are retrieved in ``create_test`` via three selection
 attributes:
 
 * The test category, specified with ``--xml-category`` (e.g.,
-  ``--xml-category aux_clm``; see `Test categories`_ for other options)
+  ``--xml-category aux_clm_noresm``; see `Test categories`_ for other options)
 
 * The machine, specified with ``--xml-machine`` (e.g., ``--xml-machine
-  betzy``). 
+  betzy``).
 
 * The compiler, specified with ``--xml-compiler`` (e.g.,
-  ``--xml-compiler intel``) (although it's also possible to leave this
-  out and run all tests for this category and machine in a single test
-  suite)
+  ``--xml-compiler intel``) (it is possible to leave this
+  out and run all tests for this category/machine combination in a single test
+  submission)
 
-So a component's testing policy may state something like: You must run
-the tests from the ``aux_cam_noresm`` category for these machine/compiler
-combinations: for now betzy/intel.
-
-So, for example, to run the subset of the ``aux_cam_noresm`` test suite that
+For example, to run the subset of the ``aux_cam_noresm`` test suite that
 runs on betzy with the intel compiler, you can run::
 
-  ./create_test --xml-category aux_cam --xml-machine betzy --xml-compiler intel
+  ./create_test --xml-category aux_cam_noresm --xml-machine betzy --xml-compiler intel
 
-The ``-r`` option described in `Options to create_test`_ is particularly
+The ``-r`` option described in `options to create_test`_ is particularly
 useful here for putting all of the tests in the test suite together in
 their own directory.
 
-``create_test`` uses multiple threads aggressively to speed up the process of setting up
-and building all of the cases in your test suite. On a shared system,this can turn you
-into a bad neighbor and get you in trouble with your system administrator. If possible,
-you should submit the create_test job to a compute node rather than running it on the
-login node.
-If you can't build the test suite on compute nodes, here are some helpful tips on running
-large test suites on the login node:
+``create_test`` uses multiple threads aggressively to speed up the
+process of setting up and building all of the cases in your test
+suite. On a shared system,this can turn you into a bad neighbor and
+get you in trouble with your system administrator. If possible, you
+should submit the ``create_test`` job to a compute node rather than
+running it on the login node. Below are some helpful suggestions in
+case you can only run large test suites on the login node:
 
-* It's a good idea to run ``create_test`` with the unix ``nohup``
-  command in case you lose your connection.
+* Run ``create_test`` with the unix ``nohup`` command in case you lose
+  your connection.
 
 * Run ``create_test`` with the unix ``nice`` command to give it a lower scheduling
   priority
@@ -646,8 +653,7 @@ large test suites on the login node:
   ``create_test`` (the default is the number of cores available on a single node of the
   machine)
 
-Putting this all together, a typical ``create_test`` command for running
-a pre-defined test suite might look like this::
+A typical ``create_test`` command for running a pre-defined test suite might then look like this::
 
   nohup nice -n 19 ./create_test --xml-category aux_cam_noresm --xml-machine betzy --xml-compiler intel -r /cluster/work/$USER/noresm/HELPFULLY_NAMED_SUBDIRECTORY --parallel-jobs 6
 
@@ -658,13 +664,13 @@ a pre-defined test suite might look like this::
 Overview of baseline comparisons
 ================================
 
-Testing that various configurations run to completion and that given
-variations are bit-for-bit with each other can only take you so
-far. Baseline comparisons enable you to determine if your code changes
-have resulted in unexpected numerical differences. Baseline comparisons
-compare the output from the current version of the code against the
-output from a previous version to determine if answers have changed at
-all in the new version.
+In addition to verifying that various configurations run to completion
+and that given variations are bit-for-bit with each other, baseline
+comparisons are also needed in order to determine if your code changes
+have resulted in unexpected numerical differences. Baseline
+comparisons compare the output from the current version of the code
+against the output from a previous version to determine if answers
+have changed at all in the new version.
 
 Depending on the changes you have made, you may expect:
 
@@ -791,7 +797,7 @@ are also performed for:
 * Model memory usage (``MEMCOMP``). However, note that system variability
   can cause this to fail even when there isn't a real problem.
 
-* Model memory leak (``MEMLEAK``). 
+* Model memory leak (``MEMLEAK``).
 
 
 Generating or comparing baselines after the fact
@@ -850,5 +856,3 @@ Here are some general tips for running test suites:
 * On betzy, set the ``PROJECT`` environment variable in your shell startup file, or use
   some other mechanism to specify a default project / account code to cime. This way, you
   won't need to add the ``--project`` argument every time you run ``create_test`` or ``create_newcase``.
-
-
