@@ -49,6 +49,11 @@ How to get information about NorESM events
 For obtaining news per email register to users@noresm.org at https://www.noresm.org or via `this link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
 
 
+The NorESM Land Sites Platform (LSP)
+------------------------------------
+The `NorESM-LSP <https://noresmhub.github.io/noresm-land-sites-platform/>`_ software allows anyone to run simple, offline, single-site simulations with the NorESM-CLM-FATES model. It is useful for beginners, or in education, to get started with the model without access to an HPC. See the NorESM-LSP's `scientific paper <https://doi.org/10.1111/gcb.16808>`_, `user guide and documentation webpage <https://noresmhub.github.io/noresm-land-sites-platform/>`_, and `main GitHub repository <https://github.com/NorESMhub/noresm-land-sites-platform>`_ for more information.
+
+
 How to contribute to the NorESM model
 -------------------------------------
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for
