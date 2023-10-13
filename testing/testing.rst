@@ -89,12 +89,9 @@ Meaning of the elements of a test name
 
 ``Testtype``: code specifying the type of test to run; common test
 types are given below.  The ``SMS`` test in the above example is a
-obasic "smoke" test that ensures that the particular
+basic "smoke" test that ensures that the particular
 configuration/resolution combinations can successfully run and
 optionally check for any undesired answer changes.
-
-basic smoke test that ensures that the particular configuration/resolution
-combination can successfully run.
 
 ``Testopt``: One or more options modifying some high-level
 configuration options. In the above example, we are compiling in debug
@@ -191,7 +188,7 @@ files.  Compare `base` and `single_thread` output files.
 (10 Do an initial run with default PE layout and add a suffix of `base` to
 the output files. (2) Do another initial run with modified PES
 (NTASKS_XXX => NTASKS_XXX/2) and add a suffix of `modpes` to the
-output fiels.  Compare the `base` and `modpes` output files.
+output fields.  Compare the `base` and `modpes` output files.
 
 ``PEA``:
 **Single PE test of MPI-SERIAL versus MPI**
@@ -260,7 +257,7 @@ Testmods directories are assumed to be in the component
 slashes in the path relative to that directory. As an example, for CAM a testmod of
 ``outfrq9s`` is found in
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/cam/outfrq9s/``.
-As another exmaple, for CTSM a testmod of ``default`` is found in
+As another example, for CTSM a testmod of ``default`` is found in
 ``$SRCROOT/components/cam/cime_config/testdefs/testmods_dirs/clm/default/``.
 
 Testmods directories can contain three types of files:
@@ -756,7 +753,7 @@ Baseline comparisons step 3: Compare against baselines
 
 Comparison against baselines is done similarly to generation (as
 described in `Baseline comparisons step 2: Generate baselines, if
-needed`_), but now you should use the ``-c-ompare COMPARE_NAME`` flag to
+needed`_), but now you should use the ``--compare COMPARE_NAME`` flag to
 ``create_test``. You should still specify ``--baseline-root
 /PATH/TO/BASELINE/ROOT``. You can optionally specify ``--generate
 GENERATE_NAME``, but if you do, make sure that ``GENERATE_NAME`` differs
