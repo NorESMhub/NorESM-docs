@@ -814,10 +814,10 @@ an already-run test suite. Some reasons this may happen are:
 
 There are two complementary tools for doing this:
 
-* ``cime/CIME/Tools/bless_test_results``: after-the-fact baseline
+* ``cime/scripts/Tools/bless_test_results``: after-the-fact baseline
   generation
 
-* ``cime/CIME/Tools/compare_test_results``: after-the-fact baseline
+* ``cime/scripts/Tools/compare_test_results``: after-the-fact baseline
   comparison
 
 A typical usage of ``compare_test_results`` for NorESM would look like this::
