@@ -3,12 +3,42 @@
 Released versions of NorESM2.0
 ==============================
 
+NorESM2.0.7
+++++++++++++
+
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.7
+* Commit: 0bcb49c
+* Released by: mvertens
+
+Incremental release containing machine updates and regression tests.
+
+This release contains:
+----------------------
+* **Updates for running on Betzy and Fram**
+* **Introduction of a small regression test suite**
+* CIME
+        (1) Updates for running on Fram and Betzy
+
+How to obtain this version:
+---------------------------
+::
+
+    git clone https://github.com/NorESMhub/NorESM.git
+    cd NorESM
+    git tag --list (this should give you a list of the existing tags or releases)
+    git checkout release-noresm2.0.7
+    ./manage_externals/checkout_externals
+
+
+
+
 NorESM2.0.6
 ++++++++++++
 
 * Repository: NorESMhub/NorESM
 * Tag: release-noresm2.0.6
-* Commit: 
+* Commit:
 * Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the six former releases.
@@ -17,7 +47,7 @@ This release contains:
 ----------------------
 * **updated NorESM2 documentation**
 * addition of **extra compsets** : new SSP5-3.4 compsets and emission driven SSP compsets (affects CAM-Nor, CLM and NorESM)
-* CAM-Nor 
+* CAM-Nor
         (1) technical (non answer-changing) modifications in CAM-Nor : correction in CCN and COSP diagnostics;
         (2) correction in H2O emission file link for f09 for the extended (year 2100-2300) SSP1-2.6 and SSP5-8.5 compsets;
         (3) addition for the above-mentioned extra compsets.
@@ -59,7 +89,7 @@ NorESM2.0.5
 * Commit: 133cc12
 * Released by: DirkOlivie
 
-Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the five former releases. 
+Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the five former releases.
 
 This release contains:
 ----------------------
@@ -81,9 +111,9 @@ How to obtain this version:
 NorESM2.0.4
 ++++++++++++
 
-* Repository: NorESMhub/NorESM 
-* Tag: release-noresm2.0.4 
-* Commit: d8c5cec 
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.4
+* Commit: d8c5cec
 * Released by: DirkOlivie
 
 This release is identical to release-noresm2.0.3 except for an additional modification in CIME related to Fram machine and the `--pecount` option for betzy. We therefore repeat here the information mentioned in release-noresm2.0.3.
@@ -123,8 +153,8 @@ NorESM2.0.3
 ++++++++++++
 
 * Repository: NorESMhub/NorESM
-* Tag: release-noresm2.0.3 
-* Commit: ac97bf2 
+* Tag: release-noresm2.0.3
+* Commit: ac97bf2
 * Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the three former releases.
@@ -159,9 +189,9 @@ How to obtain this version
 
 NorESM2.0.2
 ++++++++++++
-* Repository: NorESMhub/NorESM 
-* Tag: release-noresm2.0.2 
-* Commit: 6581d10 
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.2
+* Commit: 6581d10
 * Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. This release builds on the two former releases.
@@ -197,8 +227,8 @@ Notice
 NorESM2.0.1
 ++++++++++++
 * Repository: NorESMhub/NorESM
-* Tag: release-noresm2.0.1 
-* Commit: 21b9758 
+* Tag: release-noresm2.0.1
+* Commit: 21b9758
 * Released by: DirkOlivie
 
 Version of code which can be used to **reproduce the CMIP6 results of NorESM2**. Code is now split over several repositories. Licenses have been added.
