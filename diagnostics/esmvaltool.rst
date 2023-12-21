@@ -56,7 +56,7 @@ An example of steps to run the ESMValTool on ipcc.nird.sigma2.no
 
 Sample results are under: ::
 
-    http://ns2345k.web.sigma2.no/diagnostics/esmvaltool/
+    https://ns2345k.web.sigma2.no/diagnostics/esmvaltool/
 
 
 Find sample recipes, model data and observational data

@@ -78,4 +78,4 @@ There are several resources for learning more about git and version control. Bas
 **Get started with GitHub:**
     https://docs.github.com/en/get-started
 **Migrating from svn to git: cheat sheet**
-    http://www.git-tower.com/blog/git-for-subversion-users-cheat-sheet/
+    https://www.git-tower.com/blog/git-for-subversion-users-cheat-sheet/

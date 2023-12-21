@@ -14,10 +14,10 @@ The NorESM Diagnostic Package is a NorESM model evaluation tool written with a s
 .. glossary::
 
   CAM_DIAG
-    The CAM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the atmospheric model component ``CAM-Nor``. Based on NCAR's `AMWG Diagnostics Package <http://www.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_
+    The CAM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the atmospheric model component ``CAM-Nor``. Based on NCAR's `AMWG Diagnostics Package <https://www2.cesm.ucar.edu/working_groups/Atmosphere/amwg-diagnostics-package/>`_
   
   CLM_DIAG
-    The CLM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the land model component ``CLM``. Based on CLM `Land Model Diagnostics Package <http://www.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_
+    The CLM_DIAG diagnostics package computes climatological means of the simulation(s) and produces plots and tables of the mean climate in the land model component ``CLM``. Based on CLM `Land Model Diagnostics Package <https://www2.cesm.ucar.edu/models/cesm1.2/clm/clm_diagpackage.html>`_
 
   CICE_DIAG 
     The CICE_DIAG diagnostics package computes climatological means of the simulation(s) and produces timeseries of e.g. snow/sea ice volume/area in the sea ice model component ``CICE``.
@@ -225,7 +225,7 @@ stored in
 
   /projects/NS2345K/www/diagnostics/noresm/<username>/N1850_f19_tn14_191017/CAM_DIAG
   
-where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: http://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs.html.
+where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: https://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs/sets.htm.
 
 The climatology and time-series files under ::
 

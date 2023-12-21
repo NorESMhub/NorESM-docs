@@ -48,5 +48,5 @@ ModIvsModII produces plots and global life-cycling data (for use in a table) of 
   - copy all png (plots) and htm files to the desired output (common) directory
   - open ModIvsModII.htm in your browser: hyper-links to all other htm files, including plots, are found here
     
-Example: http://ns2345k.web.sigma2.no/aerosol_diagnostics/NFHISTnorpddmsbcsdyn_f09_mg17_20191101_vs_NHIST_f19_tn14_20190710/ModIvsModII.htm
+Example: https://ns2345k.web.sigma2.no/aerosol_diagnostics/NFHISTnorpddmsbcsdyn_f09_mg17_20191101_vs_NHIST_f19_tn14_20190710/ModIvsModII.htm
  

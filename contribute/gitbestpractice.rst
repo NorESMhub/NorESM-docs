@@ -21,7 +21,7 @@ checked out the model. Go to that directory before executing any git-commands.
 -  Also do the following on all machines where you use git:
 
   * **Make sure you have a version of git >= 2.0** (add the line "module load git" to your .bashrc files on the HPC machine e.g. Betzy, Fram)
-  * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
+  * **git config - -global push.default simple** (Will edit your ~/.gitconfig file to a safer way to share your modifications, see https://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0)
 
 For further details on downloading the NorESM code and managing externals, please see :ref:`download_code`
 
