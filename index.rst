@@ -35,6 +35,8 @@ Scientifically supported NorESM versions
 Unsupported development versions
 """"""""""""""""""""""""""""""""
 
+`NorESM2.1 <https://noresm-docs.readthedocs.io/en/noresm2.1/>`_ :
+   Bugfix version that fixes some known bugs in NorESM2. This is a technical release that does not include model tuning for a balanced climate output.
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
 
