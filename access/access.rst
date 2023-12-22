@@ -9,4 +9,3 @@ Downloading NorESM2
 
    download_code.rst
    download_input.rst
-   releases_noresm20.rst
