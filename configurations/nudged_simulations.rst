@@ -139,7 +139,7 @@ For more information, look into the file where most of the nudging code is found
   /components/cam/src/NorESM/fv/metdata.F90
   
 There are also other options for namelist modifications regarding nudging:
-http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for *met_*
+https://docs.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html and search for *met_*
 
 Available meteo fields for nudging
 -----------------------------------

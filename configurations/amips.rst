@@ -1,6 +1,6 @@
 .. _amips:
 
-Atmosphere 
+Atmosphere
 ===================================
 CAM6-Nor
 ^^^^^^^^^^^^^^
@@ -23,7 +23,7 @@ Some modifications in CAM (which are not related to the CAM-Oslo aerosol scheme)
 
 * Parameterization of turbulent air-sea fluxes (see AMIP-type experiments for more details)
 * Averaging over (changing) zenith angle during one model time step
-* Improved conservation of energy and angular momentum 
+* Improved conservation of energy and angular momentum
 
 In addition some parameter settings, emisson and input files will differ from standard CAM6 set-up.
 
@@ -63,7 +63,7 @@ Initial conditions
 .. glossary::
 
   Startup runs
-    If your experiment is a ``startup`` run, the atmosphere is initialized using basestate files. The full pathname of the bastestate file is given in the cam namelist variable ``ncdata`` which is set by build-namelist. For NorESM2-LM, the default basestate file is located in the inputdata folder (on Fram this is /cluster/shared/noresm/inputdata/)::
+    If your experiment is a ``startup`` run, the atmosphere is initialized using basestate files. The full pathname of the basestate file is given in the cam namelist variable ``ncdata`` which is set by build-namelist or via an entry in user_nl_cam. For NorESM2-LM, the default basestate file is located in the inputdata folder (on Fram this is /cluster/shared/noresm/inputdata/)::
 
       atm/cam/inic/fv/cami-mam3_0000-01-01_1.9x2.5_L32_c150407.nc
 
@@ -73,26 +73,26 @@ Initial conditions
 
     See the following file in your NorESM2 repository for a full list of basestate files for different configurations::
 
-      <noresm>/components/cam/bld/namelist_files/namelist_defaults_cam.
-  
-    Alternatively, as NorESM2 and CESM2 has the same default files, the different default basestate files can be inspected by looking at the entry for ``ncdata`` in the CESM2 documentation for CAM6.0 Fortran Namelist Definitions: http://www.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html
-  
+      <noresm>/components/cam/bld/namelist_files/namelist_defaults_cam.xml
+
+    Alternatively, as NorESM2 and CESM2 have the same default files, the different default basestate files can be inspected by looking at the entry for ``ncdata`` in the CESM2 documentation for CAM6.0 Fortran Namelist Definitions: https://docs.cesm.ucar.edu/models/cesm2/settings/2.1.0/cam_nml.html (more recent versions can be found at https://docs.cesm.ucar.edu/models/cesm2/settings/current/cam_nml.html)
+
   Branch runs
-    If your experiment is a ``branch`` run, the atmosphere is initialized using the restart files from a previous run. The restart file is determined by the variables RUN_REFCASE and RUN_REFDATE in env_run.xml. The full pathname of the restart file  is given by the cam namelist variable ``cam_branch_file``. This variable does not have a default value. 
+    If your experiment is a ``branch`` run, the atmosphere is initialized using the restart files from a previous run. The restart file is determined by the variables RUN_REFCASE and RUN_REFDATE in env_run.xml. The full pathname of the restart file is given by the cam namelist variable ``cam_branch_file``. This variable does not have a default value.
 
   Hybrid runs
-    If your experiment is a ``hybrid`` run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable ``ncdata``. 
+    If your experiment is a ``hybrid`` run, the different model components are initialized as if it was a startup, but using initialization files from a previous case at a given date (again set by the RUN_REFCASE and RUN_REFDATE variables). CAM is initialized using a initial-condition file from the previous case. The full pathname of the initial-condition file will be set in the cam namelist variable ``ncdata``.
 
 Setting up an AMIP-type experiment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere. 
+Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere.
 
-The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF. 
+The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF.
 
 AMIP compsets
 '''''''''''''
 
-Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::  
+Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.  Predefined compsets for AMIP simulations can be found in::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
 
@@ -100,36 +100,36 @@ Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.
 To create an AMIP-type experiment::
 
   ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset NFHISTnorbc --res f19_f19 --mach fram --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
-  
+
 Defined user-mod-dirs are available in::
 
   <noresm-base>/components/cam/cime_config/usermods_dirs/
-  
+
 Available user-mod-dir options for NorESM2 used in CMIP6:
- 
-* ``cmip6_noresm_fsst_xaer`` (history_aerosol=.true. , AEROFFL and AEROCOM defined)  
-* ``cmip6_noresm_fsst_hifreq_xaer`` (high frecuency output,history_aerosol=.true. , AEROFFL and AEROCOM defined)  
+
+* ``cmip6_noresm_fsst_xaer`` (history_aerosol=.true. , AEROFFL and AEROCOM defined)
+* ``cmip6_noresm_fsst_hifreq_xaer`` (high frecuency output,history_aerosol=.true. , AEROFFL and AEROCOM defined)
 
 
 Creating your own compset for AMIP simulations
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-The essential file to edit for a new AMIP NorESM compset is:: 
+The essential file to edit for a new AMIP NorESM compset is::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
 
-This examples shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
+This example shows how to simply add the "NFHIST" compset to config_components.xml. In <noresm_base>/components/cam/cime_config/config_compsets.xml the NFHIST is set as
 ::
-    
+
   <!-- fSST : evolving NorESM derived ; DMS: evolving NorESM derived -->
   <compset>
     <alias>NFHISTnorbc</alias>
     <lname>HIST_CAM60%NORESM%NORBC_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
     <science_support grid="f09_f09_mg17"/>
-  </compset>  
+  </compset>
 
 
-E.g. 
+E.g.
 
 .. glossary::
 
@@ -141,18 +141,18 @@ E.g.
   CLM50%BGC-CROP
     * Build CLM5 (land model) with a global crop model (interactive vegetation)
     * If you want pre-described vegetation, use CLM50%SP
-    
+
   CICE%PRES
     * Build CICE (sea-ice model) with prescribed sea-ice
-    
+
   DOCN%DOM
-    * Build data ocean with fixed SSTs. 
-    
+    * Build data ocean with fixed SSTs.
+
   MOSART
     * Build MOSART (river runoff model) with default configurations
-    
+
   SGLC_SWAV
-    * The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements 
+    * The SGLC (land-ice) and SWAV (ocean-wave) models are not interactive, but used only to satisfy the interface requirements
 
 To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable ``SSTICE_DATA_FILENAME`` in the ``evn_run.xml`` file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
 
@@ -183,42 +183,42 @@ NorESM2-derived boundary conditions for AMIP-style simulations
 
 While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SST, sea-ice cover and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made:
 
-1. a pre-industrial climatology with 2-degree resolution 
+1. a pre-industrial climatology with 2-degree resolution
    * 2x2 degree resolution in the horizontal
    * contains 12 monthly values
-   * based on a 30-year period (years 1751–1780) from the CMIP6 pre-industrial control (piControl) simulation with 2x2 degree resolution (NorESM2-LM).  
-   * was used for the CMIP6 simulation piClim-control, and all simulations that are perturbation runs based on piClim-control, with NorESM2-LM (mostly 30-year long simulations) 
-  
-2. a pre-industrial climatology with 1-degree resolution 
+   * based on a 30-year period (years 1751–1780) from the CMIP6 pre-industrial control (piControl) simulation with 2x2 degree resolution (NorESM2-LM).
+   * was used for the CMIP6 simulation piClim-control, and all simulations that are perturbation runs based on piClim-control, with NorESM2-LM (mostly 30-year long simulations)
+
+2. a pre-industrial climatology with 1-degree resolution
    * as above but on 1x1 resolution in the horizontal, and based on years 1351-1380 from the CMIP6 piControl simulation with 1x1 degree resolution (NorESM2-MM)
 
-3. the historical period 
+3. the historical period
    * 2x2 degree resolution in the horizontal
-   * contains monthly values for years 1849-20155
-   * based on the period 1850–2014 from the CMIP6 historical simulation with 2x2 degree resolution (NorESM2-LM).  
-   * was used for the CMIP6 simulation histSST, and all simulations that are perturbation runs based on sstHIST, with NorESM2-LM (165-year long simulations). 
- 
+   * contains monthly values for years 1849-2015
+   * based on the period 1850–2014 from the CMIP6 historical simulation with 2x2 degree resolution (NorESM2-LM).
+   * was used for the CMIP6 simulation histSST, and all simulations that are perturbation runs based on sstHIST, with NorESM2-LM (165-year long simulations).
+
 4. a future period based on SSP3-7.0
    * 2x2 degree resolution in the horizontal
    * contains monthly values for years 2014-2101
-   * based on years 2015-2100 frm the CMIP6 SSP3-7.0 simulation with 2-degree resolution (NorESM2-LM).  
-   * was used for the CMIP6 simulation ssp370SST, and all simulations that are perturbation runs based on ssp370SST, with NorESM2-LM (86-year longs imulations).  
-   * for comparison of piClim-control and piControl, one should focus on the 30-year periods mentioned above (year 1751–1780 and 1351–1380 ) due to inter-decadal variability and/or drifts in piControl  
+   * based on years 2015-2100 frm the CMIP6 SSP3-7.0 simulation with 2-degree resolution (NorESM2-LM).
+   * was used for the CMIP6 simulation ssp370SST, and all simulations that are perturbation runs based on ssp370SST, with NorESM2-LM (86-year longs imulations).
+   * for comparison of piClim-control and piControl, one should focus on the 30-year periods mentioned above (year 1751–1780 and 1351–1380 ) due to inter-decadal variability and/or drifts in piControl
 
 
 Another thing that must be kept in mind when doing AMIP-style simulations that should resemble the coupled NorESM2 climate as closely as possible is the choice of flux parameterization used for the transfer of heat, moisture and momentum between the ocean and atmosphere, the so-called COARE flux parameterization. The flux parameterization is controlled by the variable ``OCN_FLUX_SCHEME`` in the ``env_run.xml`` file. The standard choice in CESM is::
 
-  OCN_FLUX_SCHEME=0 
+  OCN_FLUX_SCHEME=0
 
 This parameterisation is different from the standard flux parameterization used in NorESM2, which is activated by::
 
   OCN_FLUX_SCHEME=1.
-  
+
 and ends up in the drv_in namelist as::
 
-  flux_scheme=1. 
-  
- 
+  flux_scheme=1.
+
+
 Code modifications
 ^^^^^^^^^^^^^^^^^^
 

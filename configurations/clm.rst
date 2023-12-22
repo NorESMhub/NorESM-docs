@@ -6,7 +6,7 @@ Land and river run off
 CLM5
 ------
 
-The land model used in NorESM2 is the Community Land Model version 5 (`CLM5 <http://www.cesm.ucar.edu/models/clm/>`__). Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
+The land model used in NorESM2 is the Community Land Model version 5 (`CLM5 <https://www.cesm.ucar.edu/models/clm/>`__). Specific questions about CLM can be addressed to Hui Tang (email: hui.tang@geo.uio.no) or Kjetil Aas (email: k.s.aas@geo.uio.no).
 
 CLM5 model configurations available in NorESM2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ For example if STOP_N=50 years, you can set::
  
 -8760 means one average value per year, and 50 years in one file.
 
-- The full namelist definitions and their defaults for CLM5 can be studied `here <http://www.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html>`__. 
+- The full namelist definitions and their defaults for CLM5 can be studied `here <https://docs.cesm.ucar.edu/models/cesm2/settings/current/clm5_0_nml.html>`__. 
 
 Spin up of CLM5 
 ^^^^^^^^^^^^^^^
@@ -228,7 +228,7 @@ By default, 20SL_8.5m is employed.
 MOSART
 -------------
 
-The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information start `here <http://www.cesm.ucar.edu/models/cesm2/river/>`_. For a techincal user guide go `here <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html>`__.   
+The Model for Scale Adaptive River Transport (MOSART) is the default river model for CESM2, CLM5 and NorESM2. For more information start `here <https://www.cesm.ucar.edu/models/cesm2/river>`_. For a techincal user guide go `here <https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/tech_note/MOSART/CLM50_Tech_Note_MOSART.html>`__.   
 
 The methods and syntax for modifying the user namelist and code in MOSART are similar to CLM5, so the previous description can be used. The user namelist for MOSART is user_nl_mosart and source code files should be copied to SourceMods/src.mosart/ in the case folder.
 

@@ -20,9 +20,7 @@ Geoscientific Model Development, 9, 2589–2622, https://doi.org/10.5194/gmd-9-2
 
 Graff, L. S., Iversen, T., Bethke, I., Debernard, J. B., Seland, Ø., Bentsen, M., Kirkevåg, A., Li, C., and Olivié, D. J. L.: Arctic amplification under global warming of 1.5 and 2 ◦C in NorESM1-Happi, Earth System Dynamics, 10, 569–598, https://www.earth-syst-dynam.net/10/569/2019/, 2019.
 
-Toniazzo, T., Bentsen, M., Craig, C., Eaton, B., Edwards, J., Goldhaber, J., Jablonowski, C., and Lauritzen, P. J.: Enforcing con-
-servation of axial angular momentum in the atmospheric general circulation model CAM6, Geosc. Model Devel. Discussions,
-https://doi.org/10.5194/gmd-2019-254, 2019.
+Toniazzo, T., Bentsen, M., Craig, C., Eaton, B., Edwards, J., Goldhaber, S., Jablonowski, C., and Lauritzen, P. J.: Enforcing conservation of axial angular momentum in the atmospheric general circulation model CAM6, Geosc. Model Devel. Discussions, https://doi.org/10.5194/gmd-2019-254, 2019.
 
 Bentsen, M., Bethke, I., Debernard, J. B., Iversen, T., Kirkevåg, A., Seland, Ø., Drange, H., Roelandt, C., Seierstad, I. A., Hoose, C., and Kristjánsson, J. E.: The Norwegian Earth System Model, NorESM1-M – Part 1: Description and basic evaluation of the physical climate,
 Geoscientific Model Development, 6, 687–720, https://www.geosci-model-dev.net/6/687/2013/,

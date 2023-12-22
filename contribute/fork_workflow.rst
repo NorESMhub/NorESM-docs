@@ -10,7 +10,7 @@ of the main NorESM repository in GitHub, which is then cloned to a location were
 code development and testing can be performed (local computer or HPC server).
 This procedure follows the guidelines set out in the coderefinery tutorial on
 `distributed version control and forking workflow
-<https://coderefinery.github.io/git-collaborative/03-distributed>`_.
+<https://coderefinery.github.io/git-collaborative/distributed/>`_.
 
 .. _(Fig. 1):
 .. figure:: ../img/git_fork_3_users.png
@@ -28,7 +28,7 @@ The workflow passes through the following steps:
    fork repository on GitHub. (first time)
 #. `Clone the fork repository
    <https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository>`_
-   to a local computer or HPC server. (first time)
+   to a local computer or HPC server. (typically once per new machine)
 #. After making code changes, push code changes to fork repository.
 #. Create a pull request to push code changes from fork repository to the main
    repository.

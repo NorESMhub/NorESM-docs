@@ -14,9 +14,9 @@ A set of AMIP-style large ensemble experiments (125 members) were carried out wi
    * a climate that is 1.5 degrees warmer than pre-industrial conditions (the Plus15-Future experiment), and 
    * a climate that is 2.0 degrees warmer than the pre-industrial (the Plus20-Future experiments) 
 
-as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; http://happimip.org; Mitchell et al., 2017). 
+as a part of the HAPPI initiative (Half A degree additional warming, Prognosis and Projected Impacts; https://www.happimip.org; Mitchell et al., 2017). 
 
-**CMOR-ized data for NorESM1-Happi and the other participating models can be retrieved from** http://portal.nersc.gov/c20c/data.html
+**CMOR-ized data for NorESM1-Happi and the other participating models can be retrieved from** https://portal.nersc.gov/c20c/data.html
 
 **Raw model output for NorESM1-Happi can be retrived from the NIRD research data archive:**
 
