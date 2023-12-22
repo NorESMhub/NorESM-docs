@@ -65,8 +65,6 @@ The frc2 files were created to avoid the occurence of random mid-month model cr
  
 to NORESM2. For a detailed description, see the section on creating your own compset below.
 
-For an overview of common compsets used for NorESM2 CMIP6 experiments, please see: :ref:`cmip6_compsets`
-
 For an overview of the compsets provided for CESM2, please see: https://docs.cesm.ucar.edu/models/cesm2/config/compsets.html.
 
 Emission-driven compsets
