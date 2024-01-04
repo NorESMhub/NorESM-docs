@@ -15,6 +15,10 @@ NorESM2.1 is a technical development version of NorESM2 that includes a few bug 
 
 NorESM2.1 being a technical development version, as opposed to a scientifically supported version, implies that tests have been carried out to ensure that NorESM2.1 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
 
+- See :ref:`noresm2.1_release_notes` for details about changes made in the NorESM2.1 version.
+
+- See :ref:`noresm2.1_test_runs` for documentation of test runs with NorESM2.1.
+
 
 NorESM2
 ^^^^^^^

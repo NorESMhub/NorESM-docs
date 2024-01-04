@@ -12,7 +12,7 @@ The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2
 | https://noresm-docs.readthedocs.io/en/noresm1/
 
 .. note::
-   You are viewing the documentation for NorESM2.1, which is a technical development version of NorESM2. If you are looking for documentation of the CMIP6 version (NorESM2.0), please refer to the `noresm2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ documentation pages. See :ref:`start` for more about the differences between NorESM2.0 and NorESM2.1.
+   You are viewing the documentation for NorESM2.1, which is a technical development version of NorESM2. If you are looking for documentation of the CMIP6 version (NorESM2.0), please refer to the `noresm2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ documentation pages. See :ref:`start` and :ref:`noresm2.1_release_notes` for more about the differences between NorESM2.0 and NorESM2.1.
 
 
 Low-key discussion forum
