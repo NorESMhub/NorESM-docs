@@ -485,7 +485,7 @@ There are two alternatives to run the tool on Betzy, either as an interactive (f
 
 The main purpose to run the tool on Betzy is to get a quick diagnostic of model output when the model is still on-the-fly, but already has some intermediate output been short-term archived to **/cluster/work/users/<username>/archive** (Refer to :ref:`archive_output`).
 
-Since the mounted NIRD project disks ``/trd-project*/xx`` are not accessible from the compute nodes, the ``-i``, ``-o`` have to point to ``/cluster/work/users/<username>/xxx``, with an execption for the ``-w`` option. See explanations and examples in the following.
+Since the mounted NIRD project disks ``/nird/projects/NSxxxxK`` are not accessible from the compute nodes, the ``-i``, ``-o`` have to point to ``/cluster/work/users/<username>/<workdir>``, with an execption for the ``-w`` option. See explanations and examples in the following.
 
 As interactive job
 ------------------
@@ -530,19 +530,19 @@ The CPU account is set to default as nn2345k if not prescribed. The CPU hours is
 
     $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -i /cluster/work/users/<username>/archive -o /cluster/work/users/<username>/diagnostics/out -w /cluster/work/users/<username>/diagnostics/www
 
-The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are not prescribed. As the mounted NIRD disks ``/trd-project**`` are not accessible from the compute nodes, the ``-i`` and ``-o`` options have to be set to ``/cluster**``. For the ``-w`` option, see the next example.
+The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are not prescribed. As the mounted NIRD disks ``/nird/projects`` are not accessible from the compute nodes, the ``-i`` and ``-o`` options have to be set to ``/cluster**``. For the ``-w`` option, see the next example.
 
 4. Set input data, output data on Betzy, and webpage path on NIRD ::
 
-    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /trd-project1/NS2345K/www/diagnostics/noresm/<username> --account=nn2345k --time=0-00:59:00
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/projects/NS2345K/www/diagnostics/noresm/<username> --account=nn2345k --time=0-00:59:00
 
 The created webpage will saved to NIRD. The webpage path specificed by ``-w`` will temporary set to the defaut location under ``/cluster/work/users/<username>/diagnostics/www``, and will ``rsync`` to NIRD after the diagnostics job is finished.
 
 5. Remove source webpage files from Betzy after transferred to NIRD ::
 
-    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /trd-project1/NS2345K/www/diagnostics/noresm/<username>/ --remove-source-files-flag=true
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/projects/NS2345K/www/diagnostics/noresm/<username>/ --remove-source-files-flag=true
 
-Options to set if temporary webpage under ``/cluster`` as described above will be removed after they are transferred to NIRD (only valid if ``-w`` option is set to ``/trd-project*`` area)
+Options to set if temporary webpage under ``/cluster`` as described above will be removed after they are transferred to NIRD (only valid if ``-w`` option is set to ``/nird/projects`` area)
 
 See more help: ::
 
@@ -550,7 +550,7 @@ See more help: ::
     /cluster/shared/noresm/diagnostics/noresm/bin/diag_srun -h
 
 .. note::
-    The mounted NIRD project area ``/trd-project*`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/work/users/<username>. The ``-w`` option can be set to ``/trd-project*`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but transfer the created webpages to NIRD automatically after the diagnostic is finished. 
+    The mounted NIRD project area ``/nird/projects`` are not available on the HPC computing nodes. Therefore, the ``-i``, ``-o`` can only be set to locations under /cluster/work/users/<username>. The ``-w`` option can be set to ``/nird/projects`` area to facility the browsing the webpage-based diagnostics. It is actually set to ``/cluster`` during runtime, but transfer the created webpages to NIRD automatically after the diagnostic is finished.
 
 --------------------------------------------------------------------------------
 
