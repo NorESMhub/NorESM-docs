@@ -10,7 +10,6 @@ Running NorESM2
    newbie_guide.rst
    experiments.rst
    experiment_environment.rst
-   cmip6_compsets.rst
    platforms.rst
    input.rst
    amips.rst
