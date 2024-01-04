@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'NorESM'
-copyright = '2023, The NorESM developers group'
+copyright = '2020 -- 2023, The NorESM developers group'
 author = 'The NorESM developers group'
 
 # The short X.Y version
