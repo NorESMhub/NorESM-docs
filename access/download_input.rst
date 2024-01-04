@@ -52,7 +52,7 @@ Advanced: Updating NorESM source inputdata
 
 The input data is currently physically stored on NIRD under ::
 
-  /trd-project3/NS9560K/www/inputdata
+  /nird/projects/NS9560K/www/inputdata
 
 Project group members can create new folders and files, also inside existing subfolders.
 However, most existing files are write protected.
@@ -60,6 +60,6 @@ However, most existing files are write protected.
 If existing files need to be updated, please contact the owners to update them, 
 or they can make the files temporarily writable by executing the script ::
 
-  /trd-project3/NS9560K/www/inputdata_permissions.sh
+  /nird/projects/NS9560K/www/inputdata_permissions.sh
 
 after commenting in/out the first or second line.
