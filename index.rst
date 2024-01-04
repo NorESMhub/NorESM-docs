@@ -43,6 +43,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    output/noresm_output.rst
    diagnostics/diagnostics.rst
    model-description/model-description.rst
+   noresm2.1/noresm2.1.rst
    data/data.rst
    contribute/contribute.rst
    testing/systemtests.rst
