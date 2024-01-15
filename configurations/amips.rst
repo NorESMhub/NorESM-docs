@@ -55,6 +55,20 @@ then both NorESM physics modifications and the NorESM CAM-oslo aerosol scheme wi
      cam/src/physics/cam_oslo
      cam/src/chemistry/pp_trop_mam_oslo
 
+Turning on AEROCOM Diagnostics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Previously in NorESM2.0, the NorESM specific CPP variables ``AEROCOM``, ``AEROFFL``, ``COLTST4INTCONS`` and ``AEROCOM_INSITU``
+were set in the CAM file ``preprocessorDefinitions.h``.
+
+* In NorESM2.1, this file no longer exists.
+* The CPP variables ``AEROFFL``, ``COLTST4INTCONS`` and ``AEROCOM_INSITU`` are no longer in the code base.  The code previously activated by the CPP variables ``COLTST4INTCONS`` and ``AEROCOM_INSITU``
+  has been removed and the code activated by the CPP variable ``AEROFFL`` is now always activated.
+* The only CPP variable that remains is ``AEROCOM`` and this variable  is now activated via a new CAM build-time xml variable,
+  ``CAM_AEROCOM``.  By default ``CAM_AEROCOM`` is FALSE. To turn on   AEROCOM at build time, simply issue the command ::
+
+    ./xmlchange CAM_AEROCOM=TRUE
+
 Initial conditions
 ^^^^^^^^^^^^^^^^^^
 
@@ -83,7 +97,7 @@ Initial conditions
 
 Setting up an AMIP-type experiment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere.
+Atmospheric Model Intercomparison Project (AMIP) style runs are runs in which the **atmosphere and land components are active while values for sea surface temperatures and sea ice concentrations are prescribed** (that is, read from a file). The sea-ice model CICE then runs in a simplified mode and computes surface fluxes, snow depth, albedo, and surface temperatures using 1D thermodynamics without conserving energy. The sea ice concentration is read from the same file that contains the sea surface temperature whereas the sea-ice thickness is assumed to be 2 m in the Northern Hemisphere and 1 m in the Southern Hemisphere.
 
 The AMIP simulation is created in the same manner as a coupled simulation, but using compsets starting with NF.
 
@@ -94,30 +108,33 @@ Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
 
-
 To see a full list of all AMIP compsets ::
 
   > cd <noresm_base>/cime/scripts
   > ./query_config --compsets cam 
 
-To create an AMIP-type experiment::
+To create an AMIP-type experiment without user mods::
 
-  ./create_newcase --case <PAT_TO_CASEFOLDER>/CASENAME --compset NFHISTnorbc --res f19_f19 --mach fram --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
+  ./create_newcase --case <PATH_TO_CASEFOLDER>/<CASENAME> --compset NFHISTnorbc --res f19_f19_mtn14 --mach betzy --project nn2345k
 
-Defined user-mod-dirs are available in::
+To create an AMIP-type experiment with provided user mods::
+
+  ./create_newcase --case <PATH_TO_CASEFOLDER>/<CASENAME> --compset NFHISTnorbc --res f19_f19_mtn14 --mach betzy --project nn2345k --user-mods-dir cmip6_noresm_fsst_xaer
+
+where defined user-mod-dirs are available in::
 
   <noresm-base>/components/cam/cime_config/usermods_dirs/
 
-Available user-mod-dir options for NorESM2 used in CMIP6:
+Available user-mod-dir options for NorESM2 used in CMIP6 are:
 
-* ``cmip6_noresm_fsst_xaer`` (history_aerosol=.true. , AEROFFL and AEROCOM defined)
-* ``cmip6_noresm_fsst_hifreq_xaer`` (high frecuency output,history_aerosol=.true. , AEROFFL and AEROCOM defined)
+* ``cmip6_noresm_fsst_xaer`` (history_aerosol=.true. and AEROCOM diagnostics activated)
+* ``cmip6_noresm_fsst_hifreq_xaer`` (high frecuency output, history_aerosol=.true. and AEROCOM diagnostics activated)
 
 
 Details of compset definitions for AMIP simulations
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-The essential file where all AMIP NorESM compsets are defined is::
+The NorESM AMIP compsets are defined in the file ::
 
   <noresm_base>/components/cam/cime_config/config_compsets.xml
 
@@ -142,10 +159,10 @@ E.g.
     * If you want pre-described vegetation, use CLM50%SP
 
   CICE%PRES
-    * Build CICE (sea-ice model) with prescribed sea-ice
+    * Build CICE (sea-ice model) with prescribed sea-ice concentration (that are consistent with the  prescribed SSTs)
 
   DOCN%DOM
-    * Build data ocean with fixed SSTs.
+    * Build data ocean with fixed SSTs (that are consistent with prescribed sea-ice concentrations) 
 
   MOSART
     * Build MOSART (river runoff model) with default configurations
@@ -153,10 +170,19 @@ E.g.
   SGLC
     * The SGLC (land-ice) component is a 'stub' component  which is only to satisfy the interface requirements
 
-  SGLC_SWAV
+  SWAV
     * The SWAV (ocean-wave) component is a 'stub' component  which is only to satisfy the interface requirements
 
-To use different prescribed fields for SSTs and sea-ice cover than the default, change the value of the variable ``SSTICE_DATA_FILENAME`` in  ``env_run.xml`` file to the full path of a different file that complies to the requirements of the CICE and the data-ocean model.
+
+The SST/sea-ice-concentration file that is used for a given CAM compset configuration (e.g. ``CAM60%NORESM%NORBC``) is set in the file ::
+
+      <noresm_base>/cime/src/components/data_comps/docn/cime_config/config_component.xml
+
+and appears in the run time xml variable ``SSTICE_DATA_FILENAME`` in  ``env_run.xml``.
+To use a different forcing file, use the command ``xmlchange`` to
+modify ``SSTICE_DATA_FILENAME`` to point to a full pathname of a
+alternative dataset that contains new SST and sea-ice concentration data
+that can be used by both CICE and DOCN.
 
 AMIP-style simulations with observed SSTs and frc2 emission files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
