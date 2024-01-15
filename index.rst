@@ -4,21 +4,24 @@
    contain the root `toctree` directive.
 
 Welcome to the NorESM2 User's Guide!
-================================================
+====================================
 
 The purpose of the NorESM2 User's Guide is to provide a common place for NorESM2 users and developers to share information. E.g. How is the code organised? What tools are used? Which version should be run for what purpose? 
 
 | The NorESM1 version ReadTheDocs can be found here
 | https://noresm-docs.readthedocs.io/en/noresm1/
 
+.. note::
+   You are viewing the documentation for NorESM2.1, which is a technical development version of NorESM2. If you are looking for documentation of the CMIP6 version (NorESM2.0), please refer to the `noresm2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ documentation pages. See :ref:`start` and :ref:`noresm2.1_release_notes` for more about the differences between NorESM2.0 and NorESM2.1.
+
 
 Low-key discussion forum
----------------------------
+------------------------
 If you have a question or you can’t find the solution to a problem in the documentation, please post your question here: https://github.com/NorESMhub/NorESM/discussions
 
 
 How to contribute
-------------------
+-----------------
 We welcome contributions to the NorESM model, including bug reports and fixes, contributions for
 code improvements, and suggestions for feature enhancements or inclusion of new features. Please
 consult the `CONTRIBUTING.md <https://github.com/NorESMhub/NorESM/blob/master/CONTRIBUTING.md>`_
@@ -40,6 +43,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    output/noresm_output.rst
    diagnostics/diagnostics.rst
    model-description/model-description.rst
+   noresm2.1/noresm2.1.rst
    data/data.rst
    contribute/contribute.rst
    testing/systemtests.rst
@@ -48,7 +52,7 @@ For obtaining news per email register to users@noresm.org at https://www.noresm.
    
 
 Search
-==================
+======
 
 * :ref:`search`
 
