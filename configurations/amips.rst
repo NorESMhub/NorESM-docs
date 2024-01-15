@@ -15,7 +15,7 @@ A different aerosol scheme is included in CAM6-Nor.  The code for this scheme ca
 * components/cam/NorESM/
 * components/cam/NorESM/fv
 * components/cam/src/chemistry/pp_trop_mam_oslo
-* components/cam/src/chemistry/oslo_aero 
+* components/cam/src/chemistry/oslo_aero
 * components/cam/src/physics/cam_oslo
 
 
@@ -48,7 +48,7 @@ then both NorESM physics modifications and the NorESM CAM-oslo aerosol scheme wi
 1. the xml variable ``CAM_CONFIG_OPTS`` will contain ``-chem trop_mam_oslo -camnor``
 2. the following source directories will be prepended to the list of directories that are searched
    (.ie. they appear in ``Filepath``)::
-    
+
      cam/src/NorESM
      cam/src/NorESM/$dyn (in our case is thus often cam/src/NorESM/fv)
      cam/src/chemistry/oslo_aero
@@ -111,7 +111,7 @@ Compsets starting with NF are NorESM AMIP (atmosphere/land-only) configurations.
 To see a full list of all AMIP compsets ::
 
   > cd <noresm_base>/cime/scripts
-  > ./query_config --compsets cam 
+  > ./query_config --compsets cam
 
 To create an AMIP-type experiment without user mods::
 
@@ -162,16 +162,16 @@ E.g.
     * Build CICE (sea-ice model) with prescribed sea-ice concentration (that is consistent with the  prescribed SSTs)
 
   DOCN%DOM
-    * Build data ocean with prescribed SST (that is consistent with prescribed sea-ice concentrations) 
+    * Build data ocean with prescribed SST (that is consistent with prescribed sea-ice concentrations)
 
   MOSART
     * Build MOSART (river runoff model) with default configurations
 
   SGLC
-    * The SGLC (land-ice) component is a 'stub' component  which is included to satisfy the `CIME` interface requirements
+    * The SGLC (land-ice) component is a 'stub' component which is included to satisfy the `CIME` interface requirements
 
   SWAV
-    * The SWAV (ocean-wave) component is a 'stub' component  which is included to satisfy the `CIME` interface requirements
+    * The SWAV (ocean-wave) component is a 'stub' component which is included to satisfy the `CIME` interface requirements
 
 
 The SST/sea-ice-concentration file that is used for a given CAM compset configuration (e.g. ``CAM60%NORESM%NORBC``) is set in the file ::
@@ -207,7 +207,7 @@ The ``frc2`` option uses differently organized emission files. A new set of emis
 NorESM2-derived boundary conditions for AMIP-style simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SSTs, sea-ice concentrations and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made and can be activated with one of the compset specification listed below):
+While the prescribed values used in atmosphere-only simulations are often based on observations, one might also want to use values that resemble those from a fully-coupled simulation with NorESM2. To achieve this, it is necessary to use prescribed boundary conditions for SSTs, sea-ice concentrations and upper-ocean DMS concentrations (all three fields taken from the fully-coupled simulation). Up to now, 4 sets of boundary conditions have been made and can be activated with one of the compset specifications listed below):
 
 1. a pre-industrial climatology with 2-degree resolution (1850\_ and %NORBC in compset name)
    * 2x2 degree resolution in the horizontal
