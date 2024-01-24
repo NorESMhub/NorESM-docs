@@ -22,7 +22,7 @@ For effective radiative forcing estimates, multiple calls to the
 radiation code are necessary (see Ghan et al. 2012 for a detailed
 explanation).  Previously, in NorESM2.0, additional
 radiation-diagnostics for the decomposition of aerosol direct,
-semidirec and indirect radiative forcing were activated by defining
+semidirect and indirect radiative forcing were activated by defining
 the CPP-token ``AEROFFL``.  In NorESM2.1, this CPP-token no longer
 exists and this additional output **always** accompanies the standard
 CAM diagnostics and also does not need the ``history_aerosol =
@@ -31,14 +31,15 @@ output variables: :ref:`aerosol_output_aeroffl_variables`
 
 Output additional NorESM2 - AEROCOM diagnostics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-NorESM2 can be set up to take out additional aerosol output for use in AeroCom (https://aerocom.met.no/index.html) or other studies where there is a need for extensive aerosol diagnostics.
-In both NorESM2.0 and NorESM21, the CPP token ``AEROCOM`` need to be defined in order to activate this output.
-Howeve,r in NorESM2.1, this variable  is now activated via a new CAM build-time xml variable, ``CAM_AEROCOM``.
+NorESM2 can be set up to output additional aerosol diagnostics for use in AeroCom (https://aerocom.met.no/index.html) or other studies where there is a need for extensive aerosol diagnostics.
+In both NorESM2.0 and NorESM21, the CPP token ``AEROCOM`` must be defined in order to activate this output.
+However, in NorESM2.1, this variable  is now activated via a new CAM build-time xml variable, ``CAM_AEROCOM``.
 By default ``CAM_AEROCOM`` is FALSE. To activate the CPP token ``AEROCOM`` at build time, simply issue the command ::
 
     ./xmlchange CAM_AEROCOM=TRUE
 
-If ``AEROCOM`` is activated, we additionally get 149 variables (+ ca. 13% CPU-time). Please see an overview of the additional output variables: 
+before calling ``./case.build``.
+If ``AEROCOM`` is activated, an addition 149 variables are output (+ ca. 13% CPU-time). Please see an overview of the additional output variables: 
 :ref:`aerosol_output_aerocom_variables`
 
 
