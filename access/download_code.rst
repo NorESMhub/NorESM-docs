@@ -62,19 +62,6 @@ To check out a specific branch, for instance *noresm2* ::
 You can now inspect which tag or branch you are using by invoking the **git branch** command again. You can also inspect the commits log by invoking the **git log** command (to for instance only see the 3 commits, apply the **-n 3** option). 
 
 
-NorESM releases configured for specific HPC platforms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Machine configurations for specific HPC platforms have been integrated in different releases of NorESM, depending on when the HPC platforms became available. The following table shows which release introduced support for a specific platform. Please see :ref:`platforms` for more details.
-
-+--------------------+-------------------------+
-| **HPC platform**   | **NorESM release**      |
-+--------------------+-------------------------+
-| **Fram**           | *release-noresm2.0.0*   |
-+--------------------+-------------------------+
-| **Betzy**          | *release-noresm2.0.3*   |
-+--------------------+-------------------------+
-
-
 Manage externals
 +++++++++++++++++
 
