@@ -76,7 +76,7 @@ E.g. creating a new case running on 4 nodes ::
     
  
 .. note::
-  Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags
+  Please note that these Betzy settings are included in tag noresm2.0.4 and subsequent tags. We recommend you to use the latest released version.
 
 Queue options on Fram and on Betzy
 -----------------------------------
