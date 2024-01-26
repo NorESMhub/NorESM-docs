@@ -187,17 +187,18 @@ When a compset has a scientifically-supported grid, you can create a new case (w
 option is required when a case is created or the **create_newcase** script will fail.
 
 
-User modifications (usermods) 
+User modifications (usermods)
 '''''''''''''''''''''''''''''
-Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables. In addition, the usermodes include one SourceMod (``SourceMods/src.cam/preprocessorDefinitions.h``) which  defines whether AEROFFL and AEROCOM are activated to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`)
+Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables.
+
+In addition, the usermod directories can also include a ``shell_commands`` file which will activate the ``CAM_AEROCOM`` xml variable to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`).
 
 The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
 
-  cmip6_noresm_DECK (AEROFFL)    
-  cmip6_noresm_hifreq (high frequency output, AEROFFL)    
-  cmip6_noresm_hifreq_xaer (high frecuency output, AEROFFL and AEROCOM)   
-  cmip6_noresm_keyCLIM (used for KeyCLIM experiments, AEROFFL)
-  cmip6_noresm_xaer (AEROFFLand AEROCOM)    
+  cmip6_noresm_hifreq (high frequency output)
+  cmip6_noresm_hifreq_xaer (high frecuency output and AEROCOM)   
+  cmip6_noresm_keyCLIM (used for KeyCLIM experiments)
+  cmip6_noresm_xaer (AEROCOM)    
   
 To activate the cmip6_noresm_DECK usermod, run the create_newcase script with the option ``--user-mods-dir cmip6_noresm_DECK``. 
 
