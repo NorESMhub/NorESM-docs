@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'NorESM'
-copyright = '2020 -- 2023, The NorESM developers group'
+copyright = '2020 -- 2024, The NorESM developers group'
 author = 'The NorESM developers group'
 
 # The short X.Y version
@@ -176,6 +176,8 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+# -- Other Options -----------------------------------------------------------
+numfig = True
 
 # -- Extension configuration -------------------------------------------------
 extensions = ['sphinxcontrib.bibtex']

@@ -15,7 +15,7 @@ This release also introduces a set of regression tests for targeted compset / re
 
 Because of the simulation changes introduced by the bug fixes, this release has no scientifically supported simulations.
 
-Below, we outline the significant changes implemented in the NorESM2.1 release
+Below, we outline the significant changes implemented in the NorESM2.1 release. For more information on these, please see section :ref:`noresm2.1_test_runs`
 
 Bug fixes:
 ----------
@@ -23,7 +23,9 @@ Bug fixes:
 
 - (CAM) Fixed an `ncol/pcols` mismatch in calling the `clcoag` subroutine. This caused some columns to compute incorrect values (which columns are incorrect depends on the number of tasks). See https://github.com/NorESMhub/CAM/issues/24
 
-- (CAM) 	Removed an artificial limit on the number of ice particles. See https://github.com/NorESMhub/CAM/issues/110
+- (CAM) Removed an artificial limit on the number of ice particles. See https://github.com/NorESMhub/CAM/issues/110 . This change causes significant differences in the climate. See :numref:`noresm2.1_test_runs` for a detailed look at the changes.
+
+   For this release, we provide a method to modify the code to restore NorESM2 behavior. To activate this, go to line 2082 of <NorESM root>/components/cam/src/NorESM/micro_mg2_0.F90 and follow the instructions.
 
 - (CAM) Resolved an error in the calculation of the dry deposition. See https://github.com/NorESMhub/CAM/issues/111
 
@@ -53,9 +55,11 @@ BLOM
 - v1.5.0 contained updates for hybrid coordinates
 - v1.4.0 contained major iHAMOCC changes
   + Major iHAMOCC code re-organization
+
     + most pre-processor flags ("ifdefs") replaced by logical flags that are read in via namelist
     + all subroutines placed in modules
     + new module mo_param_bgc collects all model parameters and routines for initialization of model parameters
+
   + Major iHAMOCC code style changes (unified indentation, lower-case keywords)
   + Added regression testing functionality for BLOM, when run as part of NorESM
   + New mechanisms to create namelist files when run as part of NorESM (consistent with other NorESM components), through the file namelist_definition_blom.xml
@@ -71,7 +75,7 @@ Tested  configurations (compset / resolution combinations)
 ----------------------------------------------------------
 The combinations of compset and resolution below have been run on Betzy. That is why simulations using these combinations can be created without using the `--run-unsupported` option to `create_newcase` (see introduction above).
 
-Longer tests (currently running)
+Longer tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Compset: N1850, Grid: f19_tn14, Betzy, years 1600-1699 (branched off from N1850_f19_tn14_11062019, i.e., the point where the standard 500-year long piControl simulation also started).   These 100-year long simulations will give an indication of the TOA imbalance and of the drift in surface temperature and ocean heat content.
 - Compset: NF1850norbc, Grid: f19_f19, Betzy, 30 years.  This simulation in combination with the NF1850norbc_aer2014 allows us to estimate the ERF.
