@@ -40,16 +40,16 @@ And check which branch you are using ::
 
 To use another version of the code, you can check out a specific tag or a branch.
 
-Check out a specific NorESM branch, e.g. NorESM2.0.1
+Check out a specific NorESM branch, e.g. NorESM2.0.7
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 List all available tags ::
 
   > git tag --list 
   
-To check out a specific tag, use **git checkout <tag-name>** where *<tag-name>* is a tag for the list, for instance *release-noresm2.0.1* ::
+To check out a specific tag, use **git checkout <tag-name>** where *<tag-name>* is a tag for the list, for instance *release-noresm2.0.7* ::
 
-  > git checkout release-noresm2.0.1 
+  > git checkout release-noresm2.0.7 
 
 List all available branches ::
 
