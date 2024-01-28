@@ -191,7 +191,7 @@ User modifications (usermods)
 '''''''''''''''''''''''''''''
 Several configuration options are available in the user modification (usermod) directories under ``<noresm_base>/cime_config/usermods_dirs/``. The sets of usermods contain pre-defined user namelists for the atmosphere (cam) and land (clm) components that have been used for specific experiments, such as the CMIP6 DECK experiments. Within the user namelists, the lists of output variables and output frequencies has been modified and/or extended with additional output variables.
 
-In addition, the usermod directories can also include a ``shell_commands`` file which will activate the ``CAM_AEROCOM`` xml variable to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`).
+In addition, two of the usermod directories also include a ``shell_commands`` file which activates the ``CAM_AEROCOM`` xml variable to produce extra aerosol diagnostics (for more details about the aerosol diagnostics see :ref:`aerosol_output`).
 
 The usermods under ``<noresm_base>/cime_config/usermods_dirs/`` include::
 
