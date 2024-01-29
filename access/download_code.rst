@@ -43,7 +43,7 @@ To use another version of the code, you can check out a specific tag or a branch
 Checking out tags and branches
 ++++++++++++++++++++++++++++++
 
-You can check out the NorESM2.1 release tag as follows:
+You can check out the NorESM2.1 release tag as follows::
 
   > git checkout release-noresm2.1.1 
 
