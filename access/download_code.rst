@@ -67,7 +67,7 @@ You can now inspect which tag or branch you are using by invoking the **git bran
 Manage externals
 +++++++++++++++++
 
-To populate your actual NorESM code sandbox you need to invoke the following command::
+To populate your full NorESM code sandbox you need to invoke the following command::
 
    ./manage_externals/checkout_externals  [this will take one to a few minutes ...]
 
