@@ -3,7 +3,7 @@
 NorESM2.1 release notes
 =======================
 
-The NorESM2.1 release is a technical release that includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (NorESM tag release-noresm2.0.6).
+The NorESM2.1 release (NorESM tag **release-noresm2.1.1**) is a technical release that includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (NorESM tag **release-noresm2.0.7**).
 
 This release also introduces a set of regression tests for targeted compset / resolution combinations which is how supported simulations are defined in a technical release. There are 3 levels of support:
 

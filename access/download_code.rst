@@ -40,24 +40,26 @@ And check which branch you are using ::
 
 To use another version of the code, you can check out a specific tag or a branch.
 
-Check out a specific NorESM branch, e.g. NorESM2.0.7
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Checking out tags and branches
+++++++++++++++++++++++++++++++
 
-List all available tags ::
+You can check out the NorESM2.1 release tag as follows::
+
+  > git checkout release-noresm2.1.1 
+
+To list all available tags ::
 
   > git tag --list 
   
-To check out a specific tag, use **git checkout <tag-name>** where *<tag-name>* is a tag for the list, for instance *release-noresm2.0.7* ::
+To check out another specific tag, use **git checkout <tag-name>** where *<tag-name>* is another tag from the above list.
 
-  > git checkout release-noresm2.0.7 
-
-List all available branches ::
+To list all available branches ::
 
   > git branch --all              
 
-To check out a specific branch, for instance *noresm2* ::
+To check out a specific branch, for instance *noresm2.1* ::
 
-  > git checkout -b noresm2 origin/noresm2 
+  > git checkout -b noresm2_1_develop origin/noresm2_1_develop 
   
 You can now inspect which tag or branch you are using by invoking the **git branch** command again. You can also inspect the commits log by invoking the **git log** command (to for instance only see the 3 commits, apply the **-n 3** option). 
 
@@ -65,7 +67,7 @@ You can now inspect which tag or branch you are using by invoking the **git bran
 Manage externals
 +++++++++++++++++
 
-Then you need to launch the download:: 
+To populate your full NorESM code sandbox you need to invoke the following command::
 
    ./manage_externals/checkout_externals  [this will take one to a few minutes ...]
 
@@ -75,11 +77,8 @@ The *checkout_externals* script will read the configuration file called **Extern
 
 Now you have a complete copy of the NorESM code in the directory *<noresm-base>*.  At this point you can enter the subdirectory *<noresm-base>/cime/scripts/* and start creating a case! (see :ref:`experiments`)
 
-**Please note that if you checkout a new branch or tag, you will need to rerun checkout_externals in order to download the correct version of the model code**
+**Please note that if you checkout a new branch or tag, you will need to rerun ** `checkout_externals` ** in order to download the correct version of the model code**
 
-
-Confirm successful download of all components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To confirm a successful download of all components, you can run checkout_externals with the status flag ``-S`` to show the status of the externals or ``--logging`` to get a log of reported errors (if any): ::
 
   ./manage_externals/checkout_externals -S             [-S shows status of externals]
