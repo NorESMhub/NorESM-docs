@@ -11,7 +11,7 @@ This guide instructs both novice and experienced users on building and running N
 
 NorESM2.1
 ^^^^^^^^^
-NorESM2.1 (**NorESM tag release-noresm2.1.1**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (**NorESM tag release-noresm2.0.6**). NorESM2.1 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.1 as "NorESM2" throughout this documentation.
+NorESM2.1 (**NorESM tag release-noresm2.1.1**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (**NorESM tag release-noresm2.0.7**). NorESM2.1 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.1 as "NorESM2" throughout this documentation.
 
 NorESM2.1 is a technical development version, as opposed to a scientifically supported version. This implies that tests have been carried out to ensure that NorESM2.1 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
 
