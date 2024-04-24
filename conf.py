@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinxcontrib.bibtex',
     'sphinx.ext.githubpages',
+    'notfound.extension',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
