@@ -155,15 +155,15 @@ Create a new case:
 Tetralith @ NSC
 ^^^^^^^^^^^^^^^
 
-Configuration files for running NorESM2 on Tetralith are distributed in the featureCESM2.1.0-OsloDevelopment branch. If Tetralith configurations are missing in your copy of the model the files can be found in the following folder on Tetralith:
+Configuration files for running NorESM2 on Tetralith are distributed e.g. in the tag release-noresm2.0.7. If Tetralith configurations are missing in your copy of the model the files can be found in the following folder on Tetralith:
 ::
 
   /proj/cesm_input-data/tetralith_config_noresm2
     
 
-Apply for membership in CESM climate model shared data storage (SNIC 2019/32-10) for access to the folder.
+Apply for membership in CESM climate model shared data storage (NAISS 2024/23-95) for access to the folder.
 
-Copy the files in the above folder to:
+Copy the files in the above folder to if configuration files are not distributet witht he code:
 ::
 
     cd <noresm-base>/cime/config/cesm/machines/
@@ -176,10 +176,10 @@ Before configuring and compiling the model, clear your environment and load the 
 ::
 
   module purge 
-  module load buildenv-intel/2018.u1-bare 
-  module load netCDF/4.4.1.1-HDF5-1.8.19-nsc1-intel-2018a-eb 
-  module load HDF5/1.8.19-nsc1-intel-2018a-eb 
-  module load PnetCDF/1.8.1-nsc1-intel-2018a-eb
+  module load buildenv-intel/2023a-eb
+  module load netCDF-HDF5/4.9.2-1.12.2-hpc1
+  module load Perl/5.38.0-hpc1-gcc-system
+
 
 
 Create a new case:
