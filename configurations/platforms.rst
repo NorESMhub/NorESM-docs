@@ -163,7 +163,7 @@ Configuration files for running NorESM2 on Tetralith are distributed e.g. in the
 
 Apply for membership in CESM climate model shared data storage (NAISS 2024/23-95) for access to the folder.
 
-Copy the files in the above folder to if configuration files are not distributet witht he code:
+Copy the files in the above folder to if configuration files are not distributed with the code:
 ::
 
     cd <noresm-base>/cime/config/cesm/machines/
