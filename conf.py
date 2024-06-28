@@ -179,6 +179,5 @@ epub_exclude_files = ['search.html']
 # -- Other Options -----------------------------------------------------------
 numfig = True
 
-# -- Extension configuration -------------------------------------------------
-extensions = ['sphinxcontrib.bibtex']
+# A references bib file
 bibtex_bibfiles = ['references_noresm.bib']
