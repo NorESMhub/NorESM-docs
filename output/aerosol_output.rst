@@ -32,7 +32,7 @@ output variables: :ref:`aerosol_output_aeroffl_variables`
 Output additional NorESM2 - AEROCOM diagnostics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 NorESM2 can be set up to output additional aerosol diagnostics for use in AeroCom (https://aerocom.met.no/index.html) or other studies where there is a need for extensive aerosol diagnostics.
-In both NorESM2.0 and NorESM21, the CPP token ``AEROCOM`` must be defined in order to activate this output.
+In both NorESM2.0 and NorESM2.1, the CPP token ``AEROCOM`` must be defined in order to activate this output.
 However, in NorESM2.1, this variable  is now activated via a new CAM build-time xml variable, ``CAM_AEROCOM``.
 By default ``CAM_AEROCOM`` is FALSE. To activate the CPP token ``AEROCOM`` at build time, simply issue the command ::
 
