@@ -9,15 +9,15 @@ NorESM2 User's Guide
 This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information on how to make, set up, build, run and modify experiments using NorESM2.
 
 
-NorESM2.1
+NorESM2.3
 ^^^^^^^^^
-NorESM2.1 (**NorESM tag release-noresm2.1.1**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.0 release (**NorESM tag release-noresm2.0.7**). NorESM2.1 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.1 as "NorESM2" throughout this documentation.
+NorESM2.3 (**NorESM tag release-noresm2.3.?**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.1 release (**NorESM tag release-noresm2.1.1**). NorESM2.3 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.3 as "NorESM2" throughout this documentation.
 
-NorESM2.1 is a technical development version, as opposed to a scientifically supported version. This implies that tests have been carried out to ensure that NorESM2.1 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
+NorESM2.3 is a technical development version, as opposed to a scientifically supported version. This implies that tests have been carried out to ensure that NorESM2.3 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
 
-- See :ref:`noresm2.1_release_notes` for details about changes made in the NorESM2.1 version.
+- See :ref:`noresm2.3_release_notes` for details about changes made in the NorESM2.3 version.
 
-- See :ref:`noresm2.1_test_runs` for documentation of test runs with NorESM2.1.
+- See :ref:`noresm2.3_test_runs` for documentation of test runs with NorESM2.3.
 
 
 NorESM2

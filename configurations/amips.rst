@@ -61,7 +61,7 @@ Turning on AEROCOM Diagnostics
 Previously in NorESM2.0, the NorESM specific CPP variables ``AEROCOM``, ``AEROFFL``, ``COLTST4INTCONS`` and ``AEROCOM_INSITU``
 were set in the CAM file ``preprocessorDefinitions.h``.
 
-* In NorESM2.1, this file no longer exists.
+* In NorESM2.3, this file no longer exists.
 * The CPP variables ``AEROFFL``, ``COLTST4INTCONS`` and ``AEROCOM_INSITU`` are no longer in the code base.  The code previously activated by the CPP variables ``COLTST4INTCONS`` and ``AEROCOM_INSITU``
   has been removed and the code activated by the CPP variable ``AEROFFL`` is now always activated.
 * The only CPP variable that remains is ``AEROCOM`` and this variable  is now activated via a new CAM build-time xml variable,
