@@ -11,6 +11,7 @@ The NorESM documentation on Read the Docs is built from the branches in this rep
 | NorESM2     | [![NorESM2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2)](https://noresm-docs.readthedocs.io/en/noresm2/?badge=noresm2)         | Model version used for CMIP6 and IPCC AR6 |
 | NorESM2.1   | [![NorESM2.1 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2.1)](https://noresm-docs.readthedocs.io/en/noresm2.1/?badge=noresm2.1) | bugfix and technical release version      |
 | NorESM2.2   | [![NorESM2.2 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2.2)](https://noresm-docs.readthedocs.io/en/noresm2.2/?badge=noresm2.2) | unvalidated development version           |
+| NorESM2.3   | [![NorESM2.3 Documentation Status](https://readthedocs.org/projects/noresm-docs/badge/?version=noresm2.3)](https://noresm-docs.readthedocs.io/en/noresm2.3/?badge=noresm2.3) | unvalidated development version : NorESM2.1 + FORCeS + KeyCLIM  |
 
 
 ## How to contribute to the NorESM documentation
