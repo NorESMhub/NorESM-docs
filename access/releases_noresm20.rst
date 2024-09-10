@@ -3,6 +3,33 @@
 Released versions of NorESM2.0
 ==============================
 
+NorESM2.0.8
+++++++++++++
+
+* Repository: NorESMhub/NorESM
+* Tag: release-noresm2.0.8
+* Commit: 539ea1b
+* Released by: TomasTorsvik
+
+Incremental release with new machine settings for Betzy.
+
+This release contains:
+----------------------
+* **Updates for running on Betzy**
+
+How to obtain this version:
+---------------------------
+::
+
+    git clone https://github.com/NorESMhub/NorESM.git
+    cd NorESM
+    git tag --list (this should give you a list of the existing tags or releases)
+    git checkout release-noresm2.0.8
+    ./manage_externals/checkout_externals
+
+
+
+
 NorESM2.0.7
 ++++++++++++
 
