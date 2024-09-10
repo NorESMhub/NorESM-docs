@@ -46,6 +46,14 @@ Apply for membership in NorESM shared data storage (manager: mben@norceresearch.
 
 The run and archive directories are stored /cluster/work/users/<user_name>/
 
+NorESM requires at least Python3 for setup and building. A recommended set of modules is provided by
+::
+
+  module purge
+  module load GCCcore/11.3.0
+  module load git/2.36.0-GCCcore-11.3.0-nodocs
+  module load Python/3.10.4-GCCcore-11.3.0
+
 Create a new case: ::
 
     ./create_newcase --case ../../../cases/<casename> --mach betzy --res <resolution> --compset <compset_name> --project <project_name> --user-mods-dir <user_mods_dir> --run-unsupported
