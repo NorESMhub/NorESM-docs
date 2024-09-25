@@ -327,7 +327,7 @@ the following will appear on the screen::
 The (semi-configured) run script has then been copied to
 /scratch/<username>/diagnostics/noresm/out/CLM_DIAG/lnd_template.csh,
 and all information about the configuration is contained in
-/scratch/<username>diagnostics/noresm/out/CLM_DIAG/config.log
+/scratch/<username>/diagnostics/noresm/out/CLM_DIAG/config.log
 
 Options
 -------
