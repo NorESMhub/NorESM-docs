@@ -34,10 +34,10 @@ Installation
 ============
 
 The source codes of the NorESM diagnostics packages are developed and maintained on the Github:
-https://github.com/NordicESMhub/noresmdiagnostics.
+https://github.com/NorESMhub/NorESM-Diagnostics.
 
 And the observation dataset and grid files are hosted at:
-https://www.noresm.org/diagnostics, with a total size of ~100 GB.
+https://ns9560k.web.sigma2.no/datapeak/diagnostics/inputdata/, with a total size of ~100 GB.
 
 One can either use the preinstalled package or has a fresh install, as described below:
 
@@ -54,19 +54,19 @@ On NIRD
 ^^^^^^^
 The pre-installed path::
 
-  NIRD:/projects/NS2345K/diagnostics/noresm
+  NIRD:/projects/NS9560K/diagnostics/noresm
 
-You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS2345K project on NIRD.
+You don't need to install this diagnostic package, but you can call it as a command line directly on NIRD. As a prerequiste, you should have access permission to the NS9560K project on NIRD.
 
 One can either add the ``diag_run`` to your search path: ::
 
-  export PATH=$PATH:/projects/NS2345K/diagnostics/noresm/bin
+  export PATH=$PATH:/projects/NS9560K/diagnostics/noresm/bin
   
 (assuming you are using Bash Shell)
 
 or add it as an alias in ``$HOME/.bashrc``: :: 
 
-  alias diag_run="/projects/NS2345K/diagnostics/noresm/bin/diag_run"
+  alias diag_run="/projects/NS9560K/diagnostics/noresm/bin/diag_run"
 
 and ``source ~/.bashrc`` to make these changes take effect.
 
@@ -83,14 +83,14 @@ You can run this package without installation as a *noresm* user group. There ar
 
 One can either add the ``diag_run`` and ``diag_srun`` to your search path: ::
 
-  export PATH=$PATH:/projects/NS2345K/diagnostics/noresm/bin
+  export PATH=$PATH:/cluster/shared/noresm/diagnostics/noresm
   
 (assuming you are using Bash Shell)
 
 or add it as an alias in ``$HOME/.bashrc``: :: 
 
-  alias diag_run="/projects/NS2345K/diagnostics/noresm/bin/diag_run"
-  alias diag_srun="/projects/NS2345K/diagnostics/noresm/bin/diag_srun"
+  alias diag_run="/cluster/shared/noresm/diagnostics/noresm/bin/diag_run"
+  alias diag_srun="/cluster/shared/noresm/diagnostics/noresm/bin/diag_srun"
 
 and ``source ~/.bashrc`` to make these changes take effect.
 
@@ -104,15 +104,15 @@ Fresh install
 If you want to change the code for your own purpose, you can installed it on NIRD under your HOME folder or your own project area (i.e., /projects/NSxxxxK). There are several steps to install it:
 
 
-1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_ to your own Github respository, e.g., https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics
-2. Change to your preferred location, denoted as $DIAGROOT, where you want to install the tool, and ``git clone https://github.com/YOU_GITHUB_USERNAME/noresmdiagnostics``
-3. Change to $DIAGROOT/noresmdiagnostics/bin, and link or download all the observation and grid data files.
+1. Fork the NorESM Diagnostic Package `Github repository <https://github.com/NorESMhub/NorESM-Diagnostics>`_ to your own Github respository, e.g., https://github.com/NorESMhub/NorESM-Diagnostics
+2. Change to your preferred location, denoted as $DIAGROOT, where you want to install the tool, and ``git clone git@github.com:<YOU_GITHUB_USERNAME>/NorESM-Diagnostics.git`` (or ``git clone git@github.com:NorESMhub/NorESM-Diagnostics.git`` if you don't want to make a fork)
+3. Change to $DIAGROOT/bin, and link or download all the observation and grid data files.
 
-  - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS2345K project
-  - If you are not memember of NS2345K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
+  - If you are installing the tool on NIRD, you just need to link all the data to your clone by running the script ``linkdata.sh``, given you have access to the /project/NS9560K project
+  - If you are not memember of NS9560K or you are installing it on platforms other than NIRD, you should download all the data to your clone by executing ``dloaddata.sh``. If you are not running it on NIRD, you should have CDO, NCO and NCL installed.
   
 4. Make changes to the code/scripts for your purpose. And call ``diag_run`` of your own clone.
-5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NordicESMhub/noresmdiagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
+5. If you would like to contribute your function enhancements or bug fixes to the original diagnostic package, you should commit the changes to your fork repository, then create an Issue at the `Github repository <https://github.com/NorESMhub/NorESM-Diagnostics>`_, and finally make a ``pull request``  to the original Github repository to incorporate your changes.
 
 Run the tool on NIRD
 ========================
@@ -126,7 +126,7 @@ Call the wrapper script with ``diag_run -h`` will give you the description of th
 
   -------------------------------------------------
   Program:
-  /projects/NS2345K/diagnostics/noresm/bin/diag_run
+  /projects/NS9560K/diagnostics/noresm/bin/diag_run
   Version: 2.1
   -------------------------------------------------
   Short description:
@@ -135,7 +135,7 @@ Call the wrapper script with ``diag_run -h`` will give you the description of th
   Basic usage:
   diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] # Run model-obs diagnostics
   diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] -c2 [cntl case name] -s2 [cntl case start yr] -e2 [cntl case end yr] # Run model1-model2 diagnostics
-  nohup /projects/NS2345K/diagnostics/noresm/bin/diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] &> out & # Run model-obs diagnostics in the background with nohup
+  nohup /projects/NS9560K/diagnostics/noresm/bin/diag_run -m [model] -c [test case name] -s [test case start yr] -e [test case end yr] &> out & # Run model-obs diagnostics in the background with nohup
   
   Command-line options:
   -m, --model=MODEL                             Specify the diagnostics package (REQUIRED).
@@ -153,22 +153,22 @@ Call the wrapper script with ``diag_run -h`` will give you the description of th
   -s2, --start_yr2=SYR2                         Start year of control case climatology (OPTIONAL).
   -e2, --end_yr2=EYR2                           End year of control case climatology (OPTIONAL).
   -i, -i1, --input-dir=DIR, --input-dir1=DIR    Specify the directory where the test case history files are located (OPTIONAL).
-                                                Default is --input-dir=/projects/NS2345K/noresm/cases
+                                                Default is --input-dir=/projects/NS9560K/noresm/cases
   -i2, --input-dir2=DIR                         Specify the directory where the control case history files are located (OPTIONAL).
-                                                Default is --input-dir=/projects/NS2345K/noresm/cases
+                                                Default is --input-dir=/projects/NS9560K/noresm/cases
   -o, --output-dir=DIR                          Specify the directory where the package(s) the climatology and time-series files should be stored (OPTIONAL).
-                                                Default is --output-dir=/projects/NS2345K/diagnostics/noresm/out/$USER
+                                                Default is --output-dir=/scratch/$USER/diagnostics/noresm/out
   -p, --passive-mode                            Run the script in passive mode: the diagnostic script will be configured but not executed (OPTIONAL).
   -t, --type=TYPE                               Specify climatology or time series diagnostics (OPTIONAL): valid options are --type=climo and --type=time_series.
                                                 Default is to run both. Note that the time series are computed over the entire simulation.
   -w, --web-dir=DIR                             Specify the directory where the html should be published (OPTIONAL).
-                                                Default is --web-dir=/projects/NS2345K/www/diagnostics/noresm/$USER
+                                                Default is --web-dir=/nird/datalake/NS9560K/www/diagnostics/noresm/$USER
   --no-atm                                      Run CLM diagnostics without CAM data. Must be used for offline CLM simulations.
   
   Examples:
   diag_run -m all -c N1850_f19_tn11_exp1 -s 21 -e 50 # model-obs diagnostics of case=N1850_f19_tn11_exp1 (climatology between yrs 21 and 50) for all model components.
   diag_run -m cam -c N1850_f19_tn11_exp1 -s 21 -e 50 -w /path/to/my/html # model-obs diagnostics in CAM, publish the html in /path/to/my/html.
-  diag_run -m blom -c N1850_f19_tn11_exp1 -t time_series # model-obs time-series diagnostics in BLOM for all years represented in the model output directory (/projects/NS2345K/noresm/cases/N1850_f19_tn11_exp1/ocn/hist/).
+  diag_run -m blom -c N1850_f19_tn11_exp1 -t time_series # model-obs time-series diagnostics in BLOM for all years represented in the model output directory (/projects/NS9560K/noresm/cases/N1850_f19_tn11_exp1/ocn/hist/).
   diag_run -m cice -c N1850_f19_tn11_exp1 -s 21 -e 50 -p # configure (but do not run) model-obs diagnostics for CICE.
   diag_run -m clm -c N1850_f19_tn11_exp1 -s 21 -e 50 -i /input/directory1 -c2 N1850_f19_tn11_exp2 -s2 21 -e2 50 -i2 /input/directory2 # model1-model2 diagnostics for CLM with user-specified history file directories
   diag_run -m blom -c N1850_f19_tn11_exp1 -s 21 -e 50 -t climo # model-obs climatology diagnostics (no time series) for BLOM:
@@ -219,17 +219,17 @@ Example 1: ::
   
 This command runs atmospheric model-obs diagnostics of the case N1850_f19_tn14_191017 using
 a climatology between model years 21 and 50. It is assumed that the N1850_f19_tn14_191017
-history files are located under ``/projects/NS2345K/noresm/cases``. By default, the resulting plots and html will be
+history files are located under ``/projects/NS9560K/noresm/cases``. By default, the resulting plots and html will be
 stored in 
 ::
 
-  /projects/NS2345K/www/diagnostics/noresm/<username>/N1850_f19_tn14_191017/CAM_DIAG
+  /projects/NS9560K/www/diagnostics/noresm/<username>/N1850_f19_tn14_191017/CAM_DIAG
   
-where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /projects/NS2345K/www/diagnostics/noresm/common``. It links to the following URL: https://ns2345k.web.sigma2.no/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs/sets.htm.
+where <user_name> is your NIRD username. Or if you specify to store them under a common folder, i.e. with ``-w /nird/datalake/NS9560K/www/diagnostics/noresm/common``. It links to the following URL: https://ns9560k.web.sigma2.no/datalake/diagnostics/noresm/common/N1850_f19_tn14_191017/CAM_DIAG/yrs21to50-obs/sets.htm.
 
 The climatology and time-series files under ::
 
-  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG
+  /scratch/<username>/diagnostics/noresm/out/CAM_DIAG
  
 If you want to run *model1-model2* diagnostics, you also need to specify *case_name2*, *start_yr2* and
 *end_yr2* (-c2, -s2, -e2) in addition.
@@ -281,11 +281,11 @@ and the config and output files to: ::
   
 Hence, for `Example 1`_ above, the run scripts are saved in: ::
 
-  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
+  /scratch/<username>/diagnostics/noresm/out/CAM_DIAG/config/N1850_f19_tn14_191017/run_scripts
   
 and the config and out files in: ::
 
-  /projects/NS2345K/diagnostics/noresm/out/<username>/CAM_DIAG/config/N1850_f19_tn14_191017/logs
+  /scratch/<username>/diagnostics/noresm/out/CAM_DIAG/config/N1850_f19_tn14_191017/logs
 
 Passive-mode
 -------------
@@ -303,20 +303,20 @@ the following command::
 
 the following will appear on the screen::
 
-  [nird@login0 ~]$ /projects/NS2345K/diagnostics/noresm/bin/diag_run -m clm
+  [nird@login0 ~]$ /projects/NS9560K/diagnostics/noresm/bin/diag_run -m clm
   -------------------------------------------------
   Program:
-  /projects/NS2345K/diagnostics/noresm/bin/diag_run
+  /projects/NS9560K/diagnostics/noresm/bin/diag_run
   Version: 2.1
   -------------------------------------------------
-  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG in lnd_template.csh
-  -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS2345K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
-  -CHANGING INPUT DIR 1 to /projects/NS2345K/noresm/cases in lnd_template.csh
-  -CHANGING publish_html_root to /projects/NS2345K/www/diagnostics/noresm/<username> in lnd_template.csh
+  -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS9560K/diagnostics/noresm/out/<username>/CLM_DIAG in lnd_template.csh
+  -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS9560K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
+  -CHANGING INPUT DIR 1 to /projects/NS9560K/noresm/cases in lnd_template.csh
+  -CHANGING publish_html_root to /projects/NS9560K/www/diagnostics/noresm/<username> in lnd_template.csh
   -SETTING UP TIME-SERIES DIAGNOSTICS FOR ENTIRE EXPERIMENT
-  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG
+  CLM DIAGNOSTICS SUCCESSFULLY CONFIGURED in /projects/NS9560K/diagnostics/noresm/out/<username>/CLM_DIAG
   -------------------------------------------------
-  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG/config.log).
+  lnd_template.csh IS NOT RUNNING: NOT ALL REQUIRED VARIABLES HAVE BEEN CONFIGURED (see /projects/NS9560K/diagnostics/noresm/out/<username>/CLM_DIAG/config.log).
   -------------------------------------------------
   -------------------------------------------------
   TOTAL diag_run RUNTIME: 0m1s
@@ -325,9 +325,9 @@ the following will appear on the screen::
   DONE: Tue Dec 22 12:47:49 CET 2020
 
 The (semi-configured) run script has then been copied to
-/projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG/lnd_template.csh,
+/scratch/<username>/diagnostics/noresm/out/CLM_DIAG/lnd_template.csh,
 and all information about the configuration is contained in
-/projects/NS2345K/diagnostics/noresm/out/<username>/CLM_DIAG/config.log
+/scratch/<username>/diagnostics/noresm/out/CLM_DIAG/config.log
 
 Options
 -------
@@ -362,12 +362,12 @@ active-mode model1-model2 diagnostics if ``--type=climo`` or if type is not invo
   
 Name of the root directory of the monthly history files for case_name. For example, if your blom
 history files are located in */this/is/a/directory/case1/ocn/hist*, this option should be set to
-*input_dir=/this/is/a/directory*. Default is *input_dir=/projects/NS2345K/noresm/cases* . ::
+*input_dir=/this/is/a/directory*. Default is *input_dir=/projects/NS9560K/noresm/cases* . ::
 
   -i2 input-dir2 (--input-dir2)
   
 Name of the root directory of the monthly history files for case_name2. Also here, default is
-*input_dir2=/projects/NS2345K/noresm/cases* . ::
+*input_dir2=/projects/NS9560K/noresm/cases* . ::
 
   -m model (--model)
 
@@ -393,7 +393,7 @@ time-series files from the blom diagnostics will be stored in::
   
 Default is::
 
-  output_dir=/projects/NS2345K/diagnostics/noresm/out/<username>
+  output_dir=/projects/NS9560K/diagnostics/noresm/out/<username>
   
 where <username> is your user name on NIRD. ::
 
@@ -424,7 +424,7 @@ Specifies if you only run climatology or time-series diagnostics: valid options 
 Specifies the directory where the html should be stored. This directory should preferably be linked
 to a web server so that one can look at the results with a web browser. Default is::
 
-  --web-dir=/projects/NS2345K/www/diagnostics/noresm/
+  --web-dir=/nird/datalake/projects/NS9560K/www/diagnostics/noresm/
   
 
 Examples
@@ -442,7 +442,7 @@ Model-obs diagnostics in CAM, publish the html in /path/to/my/html: ::
   
   
 Model-obs time-series diagnostics in BLOM for all years the model output directory
-(/projects/NS2345K/noresm/cases/N1850_f19_tn14_blom_20200608/ocn/hist/): ::
+(/projects/NS9560K/noresm/cases/N1850_f19_tn14_blom_20200608/ocn/hist/): ::
 
   diag_run -m blom -c N1850_f19_tn14_blom_20200608 -t time_series
   
@@ -494,7 +494,7 @@ Run with an `intactive sbatch job <https://documentation.sigma2.no/jobs/interact
 Start an interactive job request by, for example : 
 ::
 
-  $ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn2345k
+  $ salloc --nodes=1 --mem-per-cpu=12G --time=00:30:00 --partition=preproc --account=nn9560k
 
 And then use the same command-line options of ``diag_run`` as on NIRD. 
 
@@ -506,7 +506,7 @@ Submit a backend `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_
 
 There are sbatch job specific command-line options for ``diag_srun``, in addition to the ``diag_run -h`` options: ::
 
-  --account=nsxxxxk                             : (OPTIONAL. Project account for CPU hours (default ns2345k).
+  --account=nsxxxxk                             : (OPTIONAL. Project account for CPU hours (default ns9560k).
   --time=DD-HH:MM:SS                            : (OPTIONAL. CPU walltime (default value according to length of years and active components).
   --remove-source-files-flag=true|false         : (OPTIONAL. Flag if the source file will be removed after the webpage is moved from Betzy /cluster to NIRD /project* (default as false).
 
@@ -522,9 +522,9 @@ It is the same as ``diag_run``.
 
 2. Set CPU account and hours ::
 
-    $ ./diag_srun -m blom -c test_case_name -s 1 -e 10 --account=nn2345k --time=0-00:59:00
+    $ ./diag_srun -m blom -c test_case_name -s 1 -e 10 --account=nn9560k --time=0-00:59:00
     
-The CPU account is set to default as nn2345k if not prescribed. The CPU hours is set according the prescribed experiment start and end years.
+The CPU account is set to default as nn9560k if not prescribed. The CPU hours is set according the prescribed experiment start and end years.
 
 3. Set input data, output data, and webpage path to /cluster on Betzy (the same as default values) ::
 
@@ -534,13 +534,13 @@ The above settings for ``-i``, ``-o`` and ``-w`` are default values if they are 
 
 4. Set input data, output data on Betzy, and webpage path on NIRD ::
 
-    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/projects/NS2345K/www/diagnostics/noresm/<username> --account=nn2345k --time=0-00:59:00
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/datalake/NS9560K/www/diagnostics/noresm/<username> --account=nn9560k --time=0-00:59:00
 
 The created webpage will saved to NIRD. The webpage path specificed by ``-w`` will temporary set to the defaut location under ``/cluster/work/users/<username>/diagnostics/www``, and will ``rsync`` to NIRD after the diagnostics job is finished.
 
 5. Remove source webpage files from Betzy after transferred to NIRD ::
 
-    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/projects/NS2345K/www/diagnostics/noresm/<username>/ --remove-source-files-flag=true
+    $ ./diag_srun -m blom -c NOICPLHISTOC_f09_tn14_cpldiags -s 1 -e 20 -w /nird/datalake/NS9560K/www/diagnostics/noresm/<username>/ --remove-source-files-flag=true
 
 Options to set if temporary webpage under ``/cluster`` as described above will be removed after they are transferred to NIRD (only valid if ``-w`` option is set to ``/nird/projects`` area)
 
