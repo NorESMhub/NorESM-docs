@@ -30,7 +30,6 @@ account on the system.
   for a description on how to generate a SSH keypair and adding it to your
   GitHub account.
 
-
 Clone a repository
 ''''''''''''''''''
 
@@ -50,10 +49,33 @@ sufficient to clone both to the local computer and to a server.
 
 The HTTPS option does not require a GitHub account, so this is the easiest
 option for someone who want the latest code version, but does not plan to
-contribute code back to GitHub. To upload data over HTTPS it is necessary to
-provide a personal access token (PAT) that can be created for a user account,
-which replaces the password for user authentication when pushing code to a
-GitHub repository.
+contribute code back to GitHub. To upload branches or tags to GitHub
+over HTTPS, it is necessary to provide a Personal Access Token (PAT)
+that can be created for a user account. The PAT replaces the password
+for user authentication when pushing code to a GitHub repository.
+Learn more about Personal Access Tokens at
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+If a repository remote is connected to GitHub via HTTPS and you want
+to push using SSH, you can reset the remote.
+
+First, check the URL for the remote
+::
+
+  % git remote -v
+  origin	https://github.com/NorESMhub/NorESM.git (fetch)
+  origin	https://github.com/NorESMhub/NorESM.git (push)
+
+Next, reset the protocol section
+::
+
+  % git remote set-url origin git@github.com:NorESMhub/NorESM.git
+  % git remote -v
+  origin	git@github.com:NorESMhub/NorESM.git (fetch)
+  origin	git@github.com:NorESMhub/NorESM.git (push)
+
+GitHub command line interface
+'''''''''''''''''''''''''''''
 
 The GitHub command line interface (CLI) is a recent development that allows a
 user to interact with GitHub without going through the web interface. However,
