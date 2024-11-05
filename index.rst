@@ -29,7 +29,7 @@ Scientifically supported NorESM versions
 `NorESM2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ :
    Model version used for CMIP6 and IPCC AR6.
    NorESM2 is based on the Community Earth System Model (`CESM2.1 <https://www.cesm.ucar.edu/models/cesm2>`_).
-   The latest code release is `noresm2.0.6 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6>`_, from December 12, 2022.
+   The latest code release is `noresm2.0.9 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.9>`_, from October 2024.
 
 
 Unsupported development versions
@@ -37,6 +37,7 @@ Unsupported development versions
 
 `NorESM2.1 <https://noresm-docs.readthedocs.io/en/noresm2.1/>`_ :
    Bugfix version that fixes some known bugs in NorESM2. This is a technical release that does not include model tuning for a balanced climate output.
+
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
 
