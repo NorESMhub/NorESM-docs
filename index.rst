@@ -29,7 +29,7 @@ Scientifically supported NorESM versions
 `NorESM2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ :
    Model version used for CMIP6 and IPCC AR6.
    NorESM2 is based on the Community Earth System Model (`CESM2.1 <https://www.cesm.ucar.edu/models/cesm2>`_).
-   The latest code release is `noresm2.0.6 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.6>`_, from December 12, 2022.
+   The latest code release is `noresm2.0.9 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.9>`_, from October 2024.
 
 
 Unsupported development versions
@@ -37,6 +37,7 @@ Unsupported development versions
 
 `NorESM2.1 <https://noresm-docs.readthedocs.io/en/noresm2.1/>`_ :
    Bugfix version that fixes some known bugs in NorESM2. This is a technical release that does not include model tuning for a balanced climate output.
+
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
 
@@ -48,7 +49,7 @@ If you have a question or you can’t find the solution to a problem in the docu
 
 How to get information about NorESM events
 ------------------------------------------
-For obtaining news per email register to users@noresm.org at https://www.noresm.org or via `this link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
+For obtaining news per email register to noresm-community@met.no (see instructions at https://www.noresm.org or via `this link <https://www.noresm.org/contact/#newsletter>`_).
 
 
 The NorESM Land Sites Platform (LSP)
