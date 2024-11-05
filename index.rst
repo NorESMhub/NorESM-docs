@@ -49,7 +49,7 @@ If you have a question or you can’t find the solution to a problem in the docu
 
 How to get information about NorESM events
 ------------------------------------------
-For obtaining news per email register to users@noresm.org at https://www.noresm.org or via `this link <https://www.noresm.org/mailman/listinfo/users_noresm.org>`_.
+For obtaining news per email register to noresm-community@met.no (see instructions at https://www.noresm.org or via `this link <https://www.noresm.org/contact/#newsletter>`_).
 
 
 The NorESM Land Sites Platform (LSP)
