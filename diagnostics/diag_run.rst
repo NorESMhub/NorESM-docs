@@ -127,7 +127,7 @@ Call the wrapper script with ``diag_run -h`` will give you the description of th
   -------------------------------------------------
   Program:
   /projects/NS9560K/diagnostics/noresm/bin/diag_run
-  Version: 2.1
+  Version: 2.x
   -------------------------------------------------
   Short description:
   A wrapper script for NorESM diagnostic packages.
@@ -307,7 +307,7 @@ the following will appear on the screen::
   -------------------------------------------------
   Program:
   /projects/NS9560K/diagnostics/noresm/bin/diag_run
-  Version: 2.1
+  Version: 2.x
   -------------------------------------------------
   -CHANGING DIAGNOSTICS DIRECTORY to /projects/NS9560K/diagnostics/noresm/out/<username>/CLM_DIAG in lnd_template.csh
   -CHANGING ROOT DIRECTORY FOR CODE AND DATA to /projects/NS9560K/diagnostics/noresm/packages/CLM_DIAG in lnd_template.csh
@@ -506,7 +506,7 @@ Submit a backend `preproc <https://documentation.sigma2.no/jobs/job_types/betzy_
 
 There are sbatch job specific command-line options for ``diag_srun``, in addition to the ``diag_run -h`` options: ::
 
-  --account=nsxxxxk                             : (OPTIONAL. Project account for CPU hours (default ns9560k).
+  --account=nnxxxxk                             : (OPTIONAL. Project account for CPU hours (default nn9560k).
   --time=DD-HH:MM:SS                            : (OPTIONAL. CPU walltime (default value according to length of years and active components).
   --remove-source-files-flag=true|false         : (OPTIONAL. Flag if the source file will be removed after the webpage is moved from Betzy /cluster to NIRD /project* (default as false).
 
