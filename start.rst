@@ -9,17 +9,6 @@ NorESM2 User's Guide
 This guide instructs both novice and experienced users on building and running NorESM2 for various experiment set ups. The chapters attempt to provide relatively detailed information on how to make, set up, build, run and modify experiments using NorESM2.
 
 
-NorESM2.3
-^^^^^^^^^
-NorESM2.3 (**NorESM tag release-noresm2.3.?**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.1 release (**NorESM tag release-noresm2.1.1**). NorESM2.3 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.3 as "NorESM2" throughout this documentation.
-
-NorESM2.3 is a technical development version, as opposed to a scientifically supported version. This implies that tests have been carried out to ensure that NorESM2.3 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
-
-- See :ref:`noresm2.3_release_notes` for details about changes made in the NorESM2.3 version.
-
-- See :ref:`noresm2.3_test_runs` for documentation of test runs with NorESM2.3.
-
-
 NorESM2
 ^^^^^^^
 The Norwegian Earth System Model version 2 (NorESM2) is an coupled Earth System Model developed by the NorESM Climate modeling Consortium (NCC). NorESM2 is based on the second version of the Community Earth System Model, CESM2 (https://www.cesm.ucar.edu/models/cesm2), developed and operated at the National Center for Atmospheric Research (NCAR), Boulder, US. 
@@ -81,6 +70,16 @@ LM-resolution
 | 
 | NorESM1 Documentation is found here: https://noresm-docs.readthedocs.io/en/noresm1/  
 
+
+NorESM2.3
+^^^^^^^^^
+NorESM2.3 (**NorESM tag release-noresm2.3.?**) is a technical development version of NorESM2 that includes a few bug fixes along with numerous code improvements from the NorESM2.1 release (**NorESM tag release-noresm2.1.1**). NorESM2.3 relies on the same case creation (including compsets), set up, build and run procedures as NorESM2.0, but will not generally produce the same model output. We will refer to NorESM2.3 as "NorESM2" throughout this documentation.
+
+NorESM2.3 is a technical development version, as opposed to a scientifically supported version. This implies that tests have been carried out to ensure that NorESM2.3 builds and runs for a basic set of compsets, but the model has not been tuned to produce a stable climate output and the model performance is not documented.
+
+- See :ref:`noresm2.3_release_notes` for details about changes made in the NorESM2.3 version.
+
+- See :ref:`noresm2.3_test_runs` for documentation of test runs with NorESM2.3.
 
 
 References
