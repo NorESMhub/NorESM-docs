@@ -12,7 +12,7 @@ directory is set in ``<noresm-base>/cime/config/cesm/machines/config_machines.xm
 
   <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
   
-The main download location for input data is: https://noresm.org/inputdata/
+The main download location for input data is: https://ns16001b.web.sigma2.no/datalake/inputdata/
 
 from where the downloading request might be redirected to another location.
 
