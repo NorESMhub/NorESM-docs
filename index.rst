@@ -21,25 +21,35 @@ For most use cases, the scientifically supported versions are preferable, being 
 Scientifically supported NorESM versions
 """"""""""""""""""""""""""""""""""""""""
 
-`NorESM1 <https://noresm-docs.readthedocs.io/en/noresm1/>`_ :
-   Model version used for CMIP5 and IPCC AR5.
-   NorESM1 is based on the Community Climate System Model (CCSM4.0) and the Community Earth System Model (CESM1.0.3).
-   The latest code release is `noresm 1 <https://github.com/NorESMhub/NorESM/releases/tag/1.0.0>`_, from December 19, 2018.
-
 `NorESM2 <https://noresm-docs.readthedocs.io/en/noresm2/>`_ :
    Model version used for CMIP6 and IPCC AR6.
    NorESM2 is based on the Community Earth System Model (`CESM2.1 <https://www.cesm.ucar.edu/models/cesm2>`_).
    The latest code release is `noresm2.0.9 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.9>`_, from October 2024.
 
+`NorESM1 <https://noresm-docs.readthedocs.io/en/noresm1/>`_ :
+   Model version used for CMIP5 and IPCC AR5.
+   NorESM1 is based on the Community Climate System Model (CCSM4.0) and the Community Earth System Model (CESM1.0.3).
+   The latest code release is `noresm 1 <https://github.com/NorESMhub/NorESM/releases/tag/1.0.0>`_, from December 19, 2018.
+
+
+Latest development version
+""""""""""""""""""""""""""
+
+`NorESM3.0 <https://noresm-docs.readthedocs.io/en/noresm3.0/>`_ :
+   NorESM3.0 is currently in development. This will be the CMIP7 model version once it is released.
+
 
 Unsupported development versions
 """"""""""""""""""""""""""""""""
 
-`NorESM2.1 <https://noresm-docs.readthedocs.io/en/noresm2.1/>`_ :
-   Bugfix version that fixes some known bugs in NorESM2. This is a technical release that does not include model tuning for a balanced climate output.
+`NorESM2.3 <https://noresm-docs.readthedocs.io/en/noresm2.3/>`_ :
+   Bugfix version, with some updates from KeyCLIM and FORCeS projects. Some model tuning has been performed, but currently no release version for NorESM2.3 is available.
 
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
+
+`NorESM2.1 <https://noresm-docs.readthedocs.io/en/noresm2.1/>`_ :
+   Bugfix version that fixes some known bugs in NorESM2. This is a technical release that does not include model tuning for a balanced climate output.
 
 
 Low-key discussion forum
