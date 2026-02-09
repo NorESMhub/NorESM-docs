@@ -32,6 +32,13 @@ Scientifically supported NorESM versions
    The latest code release is `noresm2.0.9 <https://github.com/NorESMhub/NorESM/releases/tag/release-noresm2.0.9>`_, from October 2024.
 
 
+Latests development version
+"""""""""""""""""""""""""""
+
+`NorESM3.0 <https://noresm-docs.readthedocs.io/en/noresm3.0/>`_ :
+   NorESM3.0 is currently in development. This will be the CMIP7 model version once it is released.
+
+
 Unsupported development versions
 """"""""""""""""""""""""""""""""
 
@@ -40,6 +47,9 @@ Unsupported development versions
 
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
+
+`NorESM2.3 <https://noresm-docs.readthedocs.io/en/noresm2.3/>`_ :
+   Bugfix version, with some updates from KeyCLIM and FORCES projects. Some model tuning has been performed, but currently no release version for NorESM2.3 is available.
 
 
 Low-key discussion forum
