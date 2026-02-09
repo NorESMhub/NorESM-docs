@@ -43,7 +43,7 @@ Unsupported development versions
 """"""""""""""""""""""""""""""""
 
 `NorESM2.3 <https://noresm-docs.readthedocs.io/en/noresm2.3/>`_ :
-   Bugfix version, with some updates from KeyCLIM and FORCES projects. Some model tuning has been performed, but currently no release version for NorESM2.3 is available.
+   Bugfix version, with some updates from KeyCLIM and FORCeS projects. Some model tuning has been performed, but currently no release version for NorESM2.3 is available.
 
 `NorESM2.2 <https://noresm-docs.readthedocs.io/en/noresm2.2/>`_ :
    Experimental development version based on CESM2.2.
