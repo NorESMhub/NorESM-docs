@@ -32,8 +32,8 @@ Scientifically supported NorESM versions
    The latest code release is `noresm 1 <https://github.com/NorESMhub/NorESM/releases/tag/1.0.0>`_, from December 19, 2018.
 
 
-Latests development version
-"""""""""""""""""""""""""""
+Latest development version
+""""""""""""""""""""""""""
 
 `NorESM3.0 <https://noresm-docs.readthedocs.io/en/noresm3.0/>`_ :
    NorESM3.0 is currently in development. This will be the CMIP7 model version once it is released.
