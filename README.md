@@ -21,7 +21,7 @@ The NorESM documentation on Read the Docs is built from the branches in this rep
 
 <img src="img/fork_NorESM-docs.png" alt="Fork NorESM documentation repository">
 
-- step 2: Go online to [NorESM documentation](https://noresm-docs.readthedocs.io/en/latest/) and whenever you would like to update the documentation, click on "Edit on GitHub".
+- step 2: Go online to [NorESM documentation](https://noresm-docs.readthedocs.io/en/main/) and whenever you would like to update the documentation, click on "Edit on GitHub".
 
 <img src="img/edit_on_github.png" alt="Edit documentation online">
 
