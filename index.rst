@@ -71,3 +71,9 @@ How to contribute to this documentation
 The source code for the NorESM documentation is available from a dedicated `NorESM-docs <https://github.com/NorESMhub/NorESM-docs/>`_ repository on gitHub.
 Further information on how to contribute to this documentation can be found at
 https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Content:
+
+   UserGuides

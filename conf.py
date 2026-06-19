@@ -26,7 +26,7 @@ author = 'The NorESM developers group'
 # The short X.Y version
 version = '3.0'
 # The full version, including alpha/beta/rc tags
-release = '3.0_beta11'
+release = '3.0_beta20'
 
 
 # -- General configuration ---------------------------------------------------
