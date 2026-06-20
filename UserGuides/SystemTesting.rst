@@ -4,9 +4,9 @@
    _Thanks to the CTSM software engineering team for providing a starting point as well
    as material for this document:
 
-============================   
+****************************
  System Testing with NorESM
-============================
+****************************
 
 The CIME Case Control System (CCS) provides a sophisticated and user friendly capability to run
 system regressions testing using ``create_test``.
@@ -19,7 +19,7 @@ Overview of CIME-CCS system testing
 
 System tests are useful for:
 
-* Verifying various requirements for a given model resolution/configuration combination:
+** Verifying various requirements for a given model resolution/configuration combination:
 
   * Model runs to completion successfully
 
