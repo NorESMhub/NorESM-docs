@@ -4,7 +4,16 @@
    _Thanks to the CTSM software engineering team for providing a starting point as well
    as material for this document:
 
-===================================
+============================   
+ System Testing with NorESM
+============================
+
+The CIME Case Control System (CCS) provides a sophisticated and user friendly capability to run
+system regressions testing using ``create_test``.
+
+If you are new to system testing with ``create_test``, we recommend you read this whole
+guide linearly. 
+
 Overview of CIME-CCS system testing
 ===================================
 
@@ -64,12 +73,12 @@ The CIME-CCS test system runs tests that involve:
 #. Providing final test results: An overall PASS/FAIL as well as
    PASS/FAIL status for individual parts of the test.
 
-========================
- Anatomy of a test name
-========================
+
+Anatomy of a test name
+======================
 
 Basic test name specification
-=============================
+-----------------------------
 
 A test name looks like this; bracketed components are optional::
 
@@ -85,7 +94,7 @@ An example is::
   SMS_D_Ld3.f19_f19_mtn14.F2000climo.betzy_intel
 
 Meaning of the elements of a test name
-======================================
+--------------------------------------
 
 ``Testtype``: code specifying the type of test to run; common test
 types are given below.  The ``SMS`` test in the above example is a
@@ -121,14 +130,14 @@ example).
 ``Testmod``: A directory containing arbitrary ``user_nl_*`` contents and
 ``xmlchange`` commands. See below for more details.
 
-=============================
- Test Categories and Options
-=============================
+
+Test Categories and Options
+===========================
 
 .. Test Categories:
 
 Test Categories
-===============
+---------------
 
 The following are the most commonly used test types and their meaning:
 
@@ -210,7 +219,7 @@ Do 20 day run with no restart files created.
 
 
 Common test options
-===================
+-------------------
 
 The following are the most commonly used test options (optional strings
 appearing after the test type, separated by ``_``):
@@ -235,7 +244,7 @@ answers) is an important requirement for several NorESM components
 specify processor layouts that use 2 threads per task.
 
 Testmods
-========
+--------
 
 Few NorESM tests simply run an out-of-the-box compset without any other
 modifications. `Testmods` provide a facility to make arbitrary changes
@@ -290,12 +299,12 @@ Testmods directories can contain three types of files:
   line), but in practice we rarely do that, because it tends to be more
   confusing than helpful.
 
-=========================
- Basic create_test usage
-=========================
+
+Basic create_test usage
+=======================
 
 Running a single test
-=====================
+---------------------
 
 Running a single test is as simple as doing the following from
 ``cime/scripts``::
@@ -312,7 +321,7 @@ For example::
    single ``create_test`` command will build and run your case.
 
 Options to create_test
-======================
+----------------------
 
 A full list of possible options to ``create_test`` can be viewed by
 running ``create_test -h``. Here are some of the most useful options:
@@ -345,7 +354,7 @@ running ``create_test -h``. Here are some of the most useful options:
   the CTSM test suites.)
 
 Parsing test output
-===================
+-------------------
 
 As a test runs through its various phases (setup, build, run, etc.),
 it updates a file named ``TestStatus`` in the test's case
@@ -394,7 +403,7 @@ More detailed test output can be found in the file named
 is the first place file you should look at.
 
 Finding more details on failed comparisons
-==========================================
+------------------------------------------
 
 Many test types perform two runs and then compare the output from the
 two, expecting bit-for-bit identical output. For example, an ``ERS``
@@ -478,7 +487,7 @@ Notice that this lists all fields that differ, along with their RMS and
 normalized RMS differences.
 
 Running multiple tests at once
-==============================
+------------------------------
 
 It is often useful to run multiple tests at once
 covering different test types, different compsets, different compilers,
@@ -509,7 +518,7 @@ helpful for putting all of the tests in the test suite together in their
 own directory.
 
 Checking the results of a test suite
-====================================
+------------------------------------
 
 You can check the individual ``TestStatus`` files in each test of your
 test suite. However, an easier way to check the results of a test
@@ -573,7 +582,7 @@ or, if you expect NLCOMP and BASELINE failures::
   ./cs.status.20220926_093725_gq431o -f --count-performance-fails -c NLCOMP -c BASELINE
 
 Running a pre-defined test suite
-================================
+--------------------------------
 
 In addition to running your own individual tests or test suites, you can
 also use ``create_test`` to run a pre-defined test suite. Moving forwards, NorESM
@@ -654,12 +663,12 @@ A typical ``create_test`` command for running a pre-defined test suite might the
 
   nohup nice -n 19 ./create_test --xml-category aux_cam_noresm --xml-machine betzy --xml-compiler intel -r /cluster/work/$USER/noresm/HELPFULLY_NAMED_SUBDIRECTORY --parallel-jobs 6
 
-======================
- Baseline comparisons
-======================
+
+Baseline comparisons
+====================
 
 Overview of baseline comparisons
-================================
+--------------------------------
 
 In addition to verifying that various configurations run to completion
 and that given variations are bit-for-bit with each other, baseline
@@ -702,7 +711,7 @@ separation pays off in the increased confidence that you haven't
 introduced bugs.
 
 Baseline comparisons step 1: Determine if you need to generate baselines
-========================================================================
+------------------------------------------------------------------------
 
 First, you need to determine what to use as a baseline. Generally this
 is the version of the ``noresm`` branch from which you have branched,
@@ -715,7 +724,7 @@ baselines go in ``/cluster/shared/noresm/noresm_baselines`` by
 default). Otherwise, you'll need to generate your own baselines.
 
 Baseline comparisons step 2: Generate baselines, if needed
-==========================================================
+----------------------------------------------------------
 
 If you need to generate baselines, you can do so by:
 
@@ -749,7 +758,7 @@ for each test in the test suite, containing history files, namelist
 files, etc.
 
 Baseline comparisons step 3: Compare against baselines
-======================================================
+------------------------------------------------------
 
 Comparison against baselines is done similarly to generation (as
 described in `Baseline comparisons step 2: Generate baselines, if
@@ -798,7 +807,7 @@ are also performed for:
 
 
 Generating or comparing baselines after the fact
-================================================
+------------------------------------------------
 
 It sometimes happens that you want to generate or compare baselines from
 an already-run test suite. Some reasons this may happen are:
@@ -840,9 +849,8 @@ where:
   each of your tests (a date and time stamp followed by a string of
   random characters)
 
-==============
- General tips
-==============
+General tips
+============
 
 Here are some general tips for running test suites:
 
