@@ -1,4 +1,4 @@
-.. _SystemTesting:
+.. _system_testing:
 
 ..
    _Thanks to the CTSM software engineering team for providing a starting point as well

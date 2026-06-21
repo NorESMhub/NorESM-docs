@@ -1,4 +1,4 @@
-.. _DataAnalysis:
+.. _data_analysis:
 
 *************************************************
  Data analysis and diagnostics tools for NorESM3

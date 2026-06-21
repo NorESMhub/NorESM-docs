@@ -7,6 +7,6 @@
 .. toctree::
    :maxdepth: 2
 
-   UserGuides/ModelDevelopmentWorkflow
-   UserGuides/SystemTesting
-   UserGuides/DataAnalysis
+   UserGuides/model_development_workflow
+   UserGuides/system_testing
+   UserGuides/data_analysis

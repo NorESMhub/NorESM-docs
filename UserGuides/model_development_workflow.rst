@@ -1,4 +1,4 @@
-.. _ModelDevelopmentWorkflow:
+.. _model_development_workflow:
 
 *************************************
  Workflow for development of NorESM3

@@ -1,4 +1,4 @@
-.. _NorESM2vsNorESM3:
+.. _NorESM2_vs_NorESM3:
 
 ***********************************
  Migrating from NorESM2 to NorESM3
