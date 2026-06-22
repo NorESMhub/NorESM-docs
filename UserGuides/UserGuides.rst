@@ -7,7 +7,7 @@
 .. toctree::
    :maxdepth: 2
 
+   ./contribute
    ./model_development_workflow
    ./system_testing
    ./data_analysis
-   ./machine_specific_instructions

@@ -4,6 +4,8 @@
  Downloading inputdata
 ***********************
 
+**These instructions are normally not essential for standard use cases on machines that are already configured for NorESM.**
+
 Input datasets are needed to run the model. We don't recommend downloading the entire dataset because of the size (~1TB).
 Input datasets needed for a specific case and configuration will be automatically downloaded when a user submits a case.
 We recommend to only have one input directory on a machine which is shared for all users.

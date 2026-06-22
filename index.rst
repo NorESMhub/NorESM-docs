@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 ***********************************
- Documnetation pages for NorESM3.0
+ Documentation pages for NorESM3.0
 ***********************************
 
 NorESM has been developed since 2007, and has served as a common platform for contributions from the Norwegian research community to the WCRP Coupled Model Intercomparison Project (CMIP) and reports from the Intergovernmental Panel on Climate Change (IPCC).
@@ -38,3 +38,4 @@ https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
 
    ./GettingStarted/GettingStarted
    ./UserGuides/UserGuides
+   ./TechnicalGuides/TechnicalGuides
