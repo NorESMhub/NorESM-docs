@@ -1,9 +1,10 @@
 .. _download_code:
 
-Downloading the model code
-==============================
+****************************
+ Downloading the model code
+****************************
 
-The NorESM2 model code is available through a public GitHub repository:
+The NorESM3 model code is available through a public GitHub repository:
 https://github.com/NorESMhub/NorESM
 
 - Most users will probably want to clone the NorESM repository to a local machine using a git command-line client (see below). This gives easy access to both stable releases and development branches of NorESM.
@@ -11,14 +12,14 @@ https://github.com/NorESMhub/NorESM
 
 
 Make a clone of the NorESM repository
-+++++++++++++++++++++++++++++++++++++
+=====================================
 
 You can obtain the code using the command-line git client on the appropriate machine as follows::
 
   git clone https://github.com/NorESMhub/NorESM.git <noresm-base>
 
 
-where *<noresm-base>* is the name of the directory where the latest version of the released code will be stored. You can replace *<noresm-base>* with the directory name you like.
+where **<noresm-base>* is the name of the directory where the latest version of the released code will be stored. You can replace *<noresm-base>* with the directory name you like.
 
 Enter the *<noresm-base>* folder ::
 
@@ -40,8 +41,9 @@ And check which branch you are using ::
 
 To use another version of the code, you can check out a specific tag or a branch.
 
+
 Check out a specific NorESM branch, e.g. NorESM2.0.1
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================
 
 List all available tags ::
 
@@ -63,7 +65,7 @@ You can now inspect which tag or branch you are using by invoking the **git bran
 
 
 NorESM releases configured for specific HPC platforms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------
 Machine configurations for specific HPC platforms have been integrated in different releases of NorESM, depending on when the HPC platforms became available. The following table shows which release introduced support for a specific platform. Please see :ref:`platforms` for more details.
 
 +--------------------+-------------------------+
@@ -76,7 +78,7 @@ Machine configurations for specific HPC platforms have been integrated in differ
 
 
 Manage externals
-+++++++++++++++++
+================
 
 Then you need to launch the download::
 
@@ -92,7 +94,7 @@ Now you have a complete copy of the NorESM code in the directory *<noresm-base>*
 
 
 Confirm successful download of all components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 To confirm a successful download of all components, you can run checkout_externals with the status flag ``-S`` to show the status of the externals or ``--logging`` to get a log of reported errors (if any): ::
 
   ./manage_externals/checkout_externals -S             [-S shows status of externals]
@@ -100,23 +102,12 @@ To confirm a successful download of all components, you can run checkout_externa
 
 
 Known python-related error
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 If you encounter problems with  ``dictionary keys changed during iteration`` , please see :ref:`tech_faq`
 
 
-Known SVN-related errors
-^^^^^^^^^^^^^^^^^^^^^^^^
-Some model components are maintained under SVN version control instead of git version control. If you run into several SVN-related errors when launching the model, you may want to try to change ``required=True`` to ``required=False`` for the model components POP2 and WW3 in **Externals.cfg**. POP2 and WW3 are not needed in NorESM2. Then try again.
-
-When accessing svn repositories with **./manage_externals/checkout_externals** for the first time on a new machine, the download of the svn repository might not work. This can be solved by doing a manual checkout without ``--quiet``, e.g.: ::
-
-    svn checkout https://svn-ccsm-models.cgd.ucar.edu/ww3/release_tags/ww3_cesm2_1_rel_01/cluster/projects/nn9560k/$USER/NorESMbittest/NorESM2.0/NorESM/components/ww3
-
-accept with "(p)" (permanently). The next time, downloading svn repositories should go smoothly.
-
-
 Configure Externals.cfg
-+++++++++++++++++++++++
+=======================
 
 The **Externals.cfg** file contains code blocks that specify what model components to include in the NorESM build, where the source code for each component is located, and what verision of the model component to use. The file can be modified to use another repository, fork, branch or tag or release for any of the model components. The following example is for the land component, which in this case points to a version of the Community Terrestrial Systems Model (CTSM), which includes the Community Land Model (CLM)
 ::
