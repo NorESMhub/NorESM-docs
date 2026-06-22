@@ -7,6 +7,6 @@
 .. toctree::
    :maxdepth: 2
 
-   GettingStarted/download_code
-   GettingStarted/download_input
-   GettingStarted/NorESM2_vs_NorESM3
+   ./NorESM2_vs_NorESM3
+   ./download_code
+   ./download_input

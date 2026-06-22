@@ -36,5 +36,5 @@ https://github.com/NorESMhub/NorESM-docs/blob/master/README.md.
    :maxdepth: 3
    :caption: Content:
 
-   GettingStarted
-   UserGuides
+   ./GettingStarted/GettingStarted
+   ./UserGuides/UserGuides

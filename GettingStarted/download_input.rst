@@ -1,7 +1,8 @@
 .. _download_input:
 
-Downloading inputdata
-======================
+***********************
+ Downloading inputdata
+***********************
 
 Input datasets are needed to run the model. We don't recommend downloading the entire dataset because of the size (~1TB).
 Input datasets needed for a specific case and configuration will be automatically downloaded when a user submits a case.
@@ -18,15 +19,16 @@ from where the downloading request might be redirected to another location.
 
 
 NorESM specific inputdata
-^^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 The recipe to download the complete NorESM2 code is based on how it is done for CESM. For more details please see
 https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html
 
 The input data sets are downloaded from multiple servers. The servers and download protocols used are listed in ``<noresm-base>/cime/config/cesm/config_inputdata.xml``
 
+
 SVN problems during downloading
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===============================
 
 If the user encounter problems using svn, e.g. that the CESM2 files from ucar.edu are not downloaded automatically when submitting a case, there are several workarounds:
 
@@ -48,7 +50,7 @@ or
 
 
 Advanced: Updating NorESM source inputdata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==========================================
 
 The input data is currently physically stored on NIRD under ::
 
