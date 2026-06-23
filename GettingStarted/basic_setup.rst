@@ -1,8 +1,8 @@
 .. _basic_setup:
 
-********************************************
- Basic steps to setup, build and run NorESM
-********************************************
+*********************************************
+ Basic steps to set up, build and run NorESM
+*********************************************
 
 This guide provides basic instructions on how set up and run a standard NorESM case by executing 4 steps:
 
